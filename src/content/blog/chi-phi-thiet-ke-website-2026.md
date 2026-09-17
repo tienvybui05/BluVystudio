@@ -2,7 +2,7 @@
 title: "Bảng giá chi phí thiết kế website 2026: Tránh bị mất tiền oan"
 description: "Làm website giá bao nhiêu là hợp lý? Phân tích chi tiết các khoản chi phí ngầm khi làm web và cách tối ưu ngân sách cho người mới."
 pubDate: "2026-09-17"
-image: "/uploads/page_speed.jpg"
+image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&q=80"
 tags:
   - báo giá
   - thiết kế website

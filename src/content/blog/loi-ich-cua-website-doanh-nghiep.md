@@ -2,7 +2,7 @@
 title: "Tại sao doanh nghiệp nhỏ cũng cần website riêng?"
 description: "Chỉ dùng Facebook và Tiktok có đủ không? Tìm hiểu lý do tại sao sở hữu website riêng là nền tảng sống còn của doanh nghiệp."
 pubDate: "2026-09-17"
-image: "/uploads/ui_ux_design.jpg"
+image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80"
 tags:
   - doanh nghiệp
   - thương hiệu

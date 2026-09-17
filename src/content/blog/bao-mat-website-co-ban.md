@@ -2,7 +2,7 @@
 title: "5 Lỗ hổng bảo mật website khiến bạn mất trắng dữ liệu"
 description: "Website bị hack không chỉ làm mất dữ liệu mà còn hủy hoại danh tiếng doanh nghiệp. Cùng tìm hiểu các lỗ hổng phổ biến nhất."
 pubDate: "2026-09-17"
-image: "/uploads/ui_ux_design.jpg"
+image: "https://images.unsplash.com/photo-1510511459019-5dda7724fd8f?w=800&q=80"
 tags:
   - bảo mật
   - thiết kế website

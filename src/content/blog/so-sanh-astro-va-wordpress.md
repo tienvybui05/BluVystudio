@@ -2,7 +2,7 @@
 title: "So sánh Astro và WordPress: Đã đến lúc bỏ WordPress?"
 description: "WordPress đã già cỗi và chậm chạp. Astro đang vươn lên trở thành framework phát triển web tĩnh số 1 hiện nay. Đâu là sự lựa chọn tốt nhất?"
 pubDate: "2026-09-17"
-image: "/uploads/page_speed.jpg"
+image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80"
 tags:
   - astro
   - wordpress

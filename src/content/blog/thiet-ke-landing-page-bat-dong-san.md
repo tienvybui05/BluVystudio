@@ -2,7 +2,7 @@
 title: "Bí quyết thiết kế Landing Page Bất Động Sản chốt sale ầm ầm"
 description: "Phân tích cấu trúc chuẩn của một Landing Page Bất động sản. Cách bố trí form, hình ảnh và nút bấm để lấy thông tin khách hàng hiệu quả nhất."
 pubDate: "2026-09-17"
-image: "/uploads/ui_ux_design.jpg"
+image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80"
 tags:
   - landing page
   - bất động sản

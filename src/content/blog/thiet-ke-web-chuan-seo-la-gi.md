@@ -2,7 +2,7 @@
 title: "Thiết kế web chuẩn SEO là gì? 7 tiêu chí bắt buộc năm 2026"
 description: "Đừng làm web chỉ để cho đẹp. Một website muốn tự động có khách hàng thì bắt buộc phải chuẩn SEO. Khám phá 7 tiêu chí đánh giá web chuẩn SEO."
 pubDate: "2026-09-17"
-image: "/uploads/ui_ux_design.jpg"
+image: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=800&q=80"
 tags:
   - chuẩn seo
   - thiết kế website
