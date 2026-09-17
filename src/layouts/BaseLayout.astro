@@ -31,7 +31,18 @@ const fullTitle = title === siteName ? title : `${title} | ${siteName}`;
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
+    <meta name="google-site-verification" content="RXMQmRonaTYptvg2Uj1UPil36HVGmJM_Lnis1TSfe-4" />
     <meta name="robots" content={robots} />
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F6FHPDTC2F"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-F6FHPDTC2F');
+    </script>
+
     <link rel="canonical" href={canonicalURL} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="theme-color" content="#f6fbfe" />
