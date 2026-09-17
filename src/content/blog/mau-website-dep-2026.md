@@ -2,7 +2,7 @@
 title: "Top xu hướng thiết kế website thống trị năm 2026"
 description: "Cập nhật ngay 5 xu hướng thiết kế website mới nhất năm 2026: AI tích hợp, Glassmorphism, Micro-interactions và hơn thế nữa."
 pubDate: "2026-09-17"
-image: "https://images.unsplash.com/photo-1547658719-da2b51169166?w=800&q=80"
+image: "https://picsum.photos/seed/design/800/450"
 tags:
   - xu hướng
   - thiết kế website

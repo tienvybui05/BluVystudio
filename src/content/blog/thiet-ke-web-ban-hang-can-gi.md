@@ -2,7 +2,7 @@
 title: "Thiết kế web bán hàng: 5 Tính năng không thể thiếu"
 description: "Bạn định mở shop online? Khám phá 5 tính năng cốt lõi giúp website bán hàng chốt đơn tự động 24/7."
 pubDate: "2026-09-17"
-image: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=800&q=80"
+image: "https://picsum.photos/seed/ecommerce/800/450"
 tags:
   - ecommerce
   - bán hàng

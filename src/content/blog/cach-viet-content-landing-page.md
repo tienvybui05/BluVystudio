@@ -2,7 +2,7 @@
 title: "Công thức viết Content Landing Page thôi miên khách hàng"
 description: "Viết gì trên Landing Page để khách đọc là muốn mua ngay? Tìm hiểu công thức AIDA và PAS ứng dụng trong thiết kế Landing page."
 pubDate: "2026-09-17"
-image: "https://images.unsplash.com/photo-1455390582262-044cdead27d8?w=800&q=80"
+image: "https://picsum.photos/seed/content/800/450"
 tags:
   - content
   - landing page

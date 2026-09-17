@@ -2,7 +2,7 @@
 title: "Tối ưu UX: Thuật tâm lý học biến người truy cập thành người mua"
 description: "Trải nghiệm người dùng (UX) không chỉ là màu sắc hay nút bấm. Nó là nghệ thuật dẫn dắt tâm lý khách hàng thực hiện hành vi."
 pubDate: "2026-09-17"
-image: "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=800&q=80"
+image: "https://picsum.photos/seed/ux/800/450"
 tags:
   - ux ui
   - thiết kế website

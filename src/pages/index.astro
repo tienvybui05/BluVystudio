@@ -594,7 +594,7 @@ const partners = [
         <h2 class="text-3xl md:text-4xl font-extrabold mt-3 mb-4 text-ocean-950">Gói dịch vụ <span class="gradient-text">phù hợp</span></h2>
         <p class="text-slate-500 text-lg max-w-2xl mx-auto">Minh bạch — Không phát sinh — Thanh toán theo milestone.</p>
       </div>
-      <div class="grid md:grid-cols-3 gap-8">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
         <!-- Gói 1 -->
         <div class="water-card p-8 flex flex-col justify-between">
           <div>
@@ -632,6 +632,20 @@ const partners = [
             <div class="mb-6"><span class="text-4xl font-extrabold text-ocean-800">3.500.000</span><span class="text-slate-400 ml-1">đ</span></div>
             <ul class="space-y-3 mb-8">
               {["Hệ thống Admin CMS quản trị", "Đăng/sửa/xóa bài viết dễ dàng", "Tặng Domain .com + Hosting 1 năm", "Tự động tối ưu SEO bài viết", "Hướng dẫn 1:1 + Bảo hành 12 tháng"].map((f) => (
+                <li class="flex items-center gap-3 text-sm text-slate-600"><svg class="w-5 h-5 text-emerald-500 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>{f}</li>
+              ))}
+            </ul>
+          </div>
+          <a href="/bang-gia" class="btn-secondary w-full justify-center">Xem chi tiết</a>
+        </div>
+        <!-- Gói 4 -->
+        <div class="water-card p-8 flex flex-col justify-between">
+          <div>
+            <h3 class="text-xl font-bold text-ocean-900 mb-2">Web Bán Hàng WordPress</h3>
+            <p class="text-slate-500 text-sm mb-6">Đầy đủ tính năng TMĐT, kho Plugin khổng lồ.</p>
+            <div class="mb-6"><span class="text-sm text-slate-400">Từ </span><span class="text-4xl font-extrabold text-ocean-800">4.500.000</span><span class="text-slate-400 ml-1">đ</span></div>
+            <ul class="space-y-3 mb-8">
+              {["Quản trị WooCommerce mạnh mẽ", "Tích hợp giỏ hàng, thanh toán", "Kho Plugin đa dạng", "Tối ưu hóa SEO On-Page", "Bảo hành kỹ thuật 12 tháng"].map((f) => (
                 <li class="flex items-center gap-3 text-sm text-slate-600"><svg class="w-5 h-5 text-emerald-500 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>{f}</li>
               ))}
             </ul>
