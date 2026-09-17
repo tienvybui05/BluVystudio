@@ -1,0 +1,94 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ContactForm from "../../components/ContactForm.astro";
+---
+
+<BaseLayout
+  title="Phở Bắc Tradition — Chuỗi Nhà Hàng Phở Gia Truyền 3 Thế Hệ"
+  description="Nước dùng hầm xương bò tươi 24 giờ cùng bánh phở tráng tay thủ công. Đặt bàn trước nhận ngay ưu đãi giảm 10% tổng hóa đơn."
+>
+  <!-- ===== DEMO PROJECT NAV HEADER ===== -->
+  <div class="bg-amber-950 text-white py-2 px-4 text-xs flex justify-between items-center border-b border-amber-800">
+    <div class="flex items-center gap-2">
+      <span class="px-2 py-0.5 rounded bg-amber-500 text-white font-bold">DEMO LIVE</span>
+      <span class="text-amber-200">Mẫu Landing Page Nhà Hàng F&B — Thiết kế bởi BluVy</span>
+    </div>
+    <a href="/#du-an" class="text-amber-300 hover:text-white font-semibold underline flex items-center gap-1">
+      ← Quay về BluVy
+    </a>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <section class="section-padding relative overflow-hidden bg-gradient-to-br from-amber-950 via-stone-900 to-amber-950 text-white" id="pho-hero">
+    <div class="max-w-7xl mx-auto relative z-10">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-7">
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-amber-200 text-xs font-bold mb-6">
+            🍜 PHỞ GIA TRUYỀN HÀ NỘI TỪ NĂM 1978
+          </div>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight text-white">
+            Phở Bắc Tradition <br />
+            <span class="bg-gradient-to-r from-amber-400 via-orange-300 to-amber-100 bg-clip-text text-transparent">Đậm Đà Hương Vị Hà Thành</span>
+          </h1>
+          <p class="text-lg md:text-xl text-amber-100/90 leading-relaxed mb-8 max-w-2xl">
+            Nước dùng thanh ngọt tự nhiên hầm từ xương ống bò tươi trong 24 giờ. Bánh phở tươi tráng tay thủ công mỗi sáng cùng thịt bò thảo nguyên mềm mượt.
+          </p>
+          <div class="flex flex-wrap gap-4 mb-8">
+            <a href="#reservation" class="btn-primary !bg-amber-500 hover:!bg-amber-600">
+              🛎️ Đặt Bàn Trước Giảm 10%
+            </a>
+            <a href="#menu" class="btn-secondary !bg-white/10 !text-white !border-white/30 hover:!bg-white/20">
+              📋 Xem Thực Đơn 30+ Món
+            </a>
+          </div>
+        </div>
+        <div class="lg:col-span-5">
+          <div class="water-card p-8 bg-white text-slate-800 shadow-2xl rounded-3xl">
+            <h3 class="text-2xl font-extrabold text-amber-950 mb-2 text-center">Đặt Bàn Giữ Chỗ Online</h3>
+            <p class="text-slate-500 text-xs text-center mb-6">Giảm ngay 10% tổng hóa đơn khi đặt bàn trước 1 giờ</p>
+            <ContactForm formId="pho-reservation-form" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== POPULAR DISHES ===== -->
+  <section class="section-padding bg-white" id="menu">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <span class="text-amber-600 text-xs font-bold uppercase tracking-[0.2em]">THỰC ĐƠN ĐẶC SẢN</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mt-2 mb-4">Các Món Phở <span class="text-amber-600">Trứ Danh</span></h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        {[
+          { name: "Phở Bò Tái Lăn Hà Nội", desc: "Thịt bò thăn hoa xào nhanh trên lửa lớn cùng hành lá rơm ngọt lịm", price: "75.000đ", icon: "🍲" },
+          { name: "Phở Đặc Biệt Thố Đá", desc: "Bát thố đá giữ nhiệt 100°C với bò tái, nạm, gầu, gân, sườn bò miếng lớn", price: "115.000đ", icon: "🪨" },
+          { name: "Phở Gà Ta Mái Đẻ", desc: "Thịt gà da vàng giòn sần sật, lá chanh tươi thái chỉ thơm lừng", price: "65.000đ", icon: "🍗" },
+        ].map((dish) => (
+          <div class="water-card p-8 text-center border-amber-100 hover:border-amber-300">
+            <div class="text-5xl mb-4">{dish.icon}</div>
+            <h3 class="text-xl font-bold text-slate-900 mb-2">{dish.name}</h3>
+            <p class="text-slate-500 text-sm mb-4 leading-relaxed">{dish.desc}</p>
+            <div class="text-2xl font-extrabold text-amber-600 mb-6">{dish.price}</div>
+            <a href="#reservation" class="btn-secondary w-full justify-center !border-amber-200 !text-amber-700 hover:!bg-amber-50">Đặt Món Nhận Mã Giảm 10%</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RESERVATION FORM ===== -->
+  <section class="section-padding bg-amber-50/50" id="reservation">
+    <div class="max-w-3xl mx-auto">
+      <div class="water-card p-10 bg-white border-amber-200 shadow-2xl">
+        <div class="text-center mb-8">
+          <h2 class="text-3xl font-extrabold text-slate-900 mb-2">Đăng Ký Đặt Bàn VIP Ngay</h2>
+          <p class="text-slate-500 text-sm">Chúng tôi sẽ gọi lại xác nhận bàn trống trong vòng 5 phút.</p>
+        </div>
+        <ContactForm formId="pho-form-footer" />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

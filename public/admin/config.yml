@@ -1,0 +1,40 @@
+# Decap CMS (Formerly Netlify CMS) Configuration
+backend:
+  name: git-gateway
+  branch: main
+
+# Enable local backend proxy for reading & saving real files on disk
+local_backend: true
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+collections:
+  # ===== 1. Bài viết Blog =====
+  - name: "blog"
+    label: "Bài Viết Blog"
+    folder: "src/content/blog"
+    create: true
+    slug: "{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - { label: "Tiêu đề bài viết", name: "title", widget: "string" }
+      - { label: "Mô tả ngắn", name: "description", widget: "text" }
+      - { label: "Ngày đăng", name: "pubDate", widget: "datetime" }
+      - { label: "Tác giả", name: "author", widget: "string", default: "WebPro Studio" }
+      - { label: "Các Thẻ Tag", name: "tags", widget: "list", default: ["thiết kế web"], required: false }
+      - { label: "Ảnh đại diện bài viết", name: "image", widget: "image", required: false }
+      - { label: "Nội dung bài viết", name: "body", widget: "markdown" }
+
+  # ===== 2. Dự án Portfolio =====
+  - name: "portfolio"
+    label: "Dự Án Tiêu Biểu"
+    folder: "src/content/portfolio"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Tên dự án", name: "title", widget: "string" }
+      - { label: "Loại hình website", name: "category", widget: "string" }
+      - { label: "Mô tả kết quả", name: "result", widget: "string" }
+      - { label: "Ảnh đại diện", name: "image", widget: "image" }

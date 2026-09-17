@@ -1,0 +1,94 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ContactForm from "../../components/ContactForm.astro";
+---
+
+<BaseLayout
+  title="MedCare Dental — Nha Khoa Quốc Tế & Thẩm Mỹ Răng Sứ"
+  description="Trung tâm nha khoa thẩm mỹ Châu Âu. Niềng răng Invisalign, Bọc răng sứ Nano và Trồng răng Implant. Đặt lịch khám 0đ hôm nay."
+>
+  <!-- ===== DEMO PROJECT NAV HEADER ===== -->
+  <div class="bg-teal-950 text-white py-2 px-4 text-xs flex justify-between items-center border-b border-teal-800">
+    <div class="flex items-center gap-2">
+      <span class="px-2 py-0.5 rounded bg-teal-500 text-white font-bold">DEMO LIVE</span>
+      <span class="text-teal-200">Mẫu Landing Page Nha Khoa Quốc Tế — Thiết kế bởi BluVy</span>
+    </div>
+    <a href="/#du-an" class="text-teal-300 hover:text-white font-semibold underline flex items-center gap-1">
+      ← Quay về BluVy
+    </a>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <section class="section-padding relative overflow-hidden bg-gradient-to-br from-teal-900 via-cyan-900 to-teal-950 text-white" id="medcare-hero">
+    <div class="max-w-7xl mx-auto relative z-10">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-7">
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-teal-200 text-xs font-bold mb-6">
+            🏥 THẨM MỸ NHA KHOA TIÊU CHUẨN CHÂU ÂU
+          </div>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight text-white">
+            MedCare Dental <br />
+            <span class="bg-gradient-to-r from-teal-300 via-cyan-200 to-white bg-clip-text text-transparent">Nụ Cười Rạng Rỡ Tự Tin</span>
+          </h1>
+          <p class="text-lg md:text-xl text-teal-100/90 leading-relaxed mb-8 max-w-2xl">
+            Công nghệ chỉnh nha 3D iTero Element 5D xem trước kết quả chỉ sau 60s. Hỗ trợ trả góp 0% lãi suất — Miễn phí tư vấn & chụp X-quang 3D.
+          </p>
+          <div class="flex flex-wrap gap-4 mb-8">
+            <a href="#booking" class="btn-primary !bg-teal-500 hover:!bg-teal-600">
+              📅 Đặt Lịch Khám & Chụp X-Quang 0đ
+            </a>
+            <a href="tel:0911223344" class="btn-secondary !bg-white/10 !text-white !border-white/30 hover:!bg-white/20">
+              📞 Hotline Bác Sĩ: 0911.22.33.44
+            </a>
+          </div>
+        </div>
+        <div class="lg:col-span-5">
+          <div class="water-card p-8 bg-white text-slate-800 shadow-2xl rounded-3xl">
+            <h3 class="text-2xl font-extrabold text-teal-950 mb-2 text-center">Đặt Lịch Khám Ưu Tiên</h3>
+            <p class="text-slate-500 text-xs text-center mb-6">Bác sĩ Thạc sĩ trực tiếp thăm khám</p>
+            <ContactForm formId="medcare-booking-form" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES ===== -->
+  <section class="section-padding bg-white" id="dich-vu">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <span class="text-teal-600 text-xs font-bold uppercase tracking-[0.2em]">DỊCH VỤ NỔI BẬT</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mt-2 mb-4">Giải Pháp Nụ Cười <span class="text-teal-600">Toàn Diện</span></h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        {[
+          { name: "Niềng Răng Invisalign", desc: "Khay niềng trong suốt siêu thẩm mỹ nhập khẩu Mỹ", price: "Từ 25 Triệu", icon: "✨" },
+          { name: "Bọc Răng Sứ Nano 3D", desc: "Răng sứ Cercon / Lava chính hãng bảo hành trọn đời", price: "Từ 1.8 Triệu / Răng", icon: "💎" },
+          { name: "Trồng Răng Implant Straumann", desc: "Phục hồi răng đã mất ăn nhai chắc chắn như răng thật", price: "Từ 12 Triệu", icon: "🦷" },
+        ].map((s) => (
+          <div class="water-card p-8 text-center border-teal-100 hover:border-teal-300">
+            <div class="text-4xl mb-4">{s.icon}</div>
+            <h3 class="text-xl font-bold text-slate-900 mb-2">{s.name}</h3>
+            <p class="text-slate-500 text-sm mb-4">{s.desc}</p>
+            <div class="text-2xl font-extrabold text-teal-600 mb-6">{s.price}</div>
+            <a href="#booking" class="btn-secondary w-full justify-center !border-teal-200 !text-teal-700 hover:!bg-teal-50">Đặt Lịch Nhận Voucher 2 Triệu</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BOOKING SECTION ===== -->
+  <section class="section-padding bg-teal-50/50" id="booking">
+    <div class="max-w-3xl mx-auto">
+      <div class="water-card p-10 bg-white border-teal-200 shadow-2xl">
+        <div class="text-center mb-8">
+          <h2 class="text-3xl font-extrabold text-slate-900 mb-2">Đăng Ký Tư Vấn & Chụp X-Quang Miễn Phí</h2>
+          <p class="text-slate-500 text-sm">Hỗ trợ đặt lịch khám không chờ đợi — Bảo mật thông tin 100%.</p>
+        </div>
+        <ContactForm formId="medcare-form-footer" />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

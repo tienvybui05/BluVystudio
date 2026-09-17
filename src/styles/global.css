@@ -1,0 +1,379 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap");
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* ===== TRUYỀN TRUNG THỦY — Luxury Ocean & River Water Theme ===== */
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+
+  --color-ocean-50: #eff8ff;
+  --color-ocean-100: #dbeffe;
+  --color-ocean-200: #bfdbfe;
+  --color-ocean-300: #7dd3fc;
+  --color-ocean-400: #38bdf8;
+  --color-ocean-500: #0ea5e9;
+  --color-ocean-600: #0284c7;
+  --color-ocean-700: #0369a1;
+  --color-ocean-800: #075985;
+  --color-ocean-900: #0c4a6e;
+  --color-ocean-950: #082f49;
+
+  --color-aqua-50: #ecfeff;
+  --color-aqua-100: #cffafe;
+  --color-aqua-200: #a5f3fc;
+  --color-aqua-300: #67e8f9;
+  --color-aqua-400: #22d3ee;
+  --color-aqua-500: #06b6d4;
+  --color-aqua-600: #0891b2;
+
+  --color-bg: #f4fafe;
+  --color-surface: #ffffff;
+  --color-heading: #082f49;
+  --color-body: #334155;
+  --color-border: #e0ecf5;
+}
+
+/* ===== Base ===== */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-bg);
+    color: var(--color-body);
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+  ::selection {
+    background-color: #bfdbfe;
+    color: #082f49;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--color-heading);
+    font-weight: 800;
+    line-height: 1.2;
+  }
+}
+
+/* ===== Keyframes ===== */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(2, 132, 199, 0.4); }
+  50% { box-shadow: 0 0 0 16px rgba(2, 132, 199, 0); }
+}
+@keyframes waterFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@keyframes rippleExpand {
+  0% { transform: translate(-50%, -50%) scale(0); opacity: 0.85; }
+  100% { transform: translate(-50%, -50%) scale(3.5); opacity: 0; }
+}
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes bubbleRiseWobble {
+  0% { transform: translateY(0) translateX(0) scale(0.35); opacity: 0; }
+  15% { opacity: 0.85; }
+  35% { transform: translateY(-30vh) translateX(18px) scale(0.7); opacity: 0.8; }
+  65% { transform: translateY(-70vh) translateX(-18px) scale(1); opacity: 0.7; }
+  85% { opacity: 0.55; }
+  100% { transform: translateY(-120vh) translateX(8px) scale(1.2); opacity: 0; }
+}
+@keyframes liquidDeform {
+  0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; transform: rotate(0deg) translateY(0); }
+  33% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; transform: rotate(120deg) translateY(-14px); }
+  66% { border-radius: 70% 30% 50% 50% / 30% 40% 60% 70%; transform: rotate(240deg) translateY(10px); }
+}
+
+@keyframes marqueeScroll {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
+}
+
+.animate-marquee {
+  display: flex !important;
+  width: max-content !important;
+  animation: marqueeScroll 22s linear infinite !important;
+  will-change: transform;
+}
+.animate-marquee:hover {
+  animation-play-state: paused !important;
+}
+
+/* ===== Interactive Click Water Splash ===== */
+.water-ripple-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  overflow: hidden;
+}
+.water-click-drop {
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 2px solid rgba(56, 189, 248, 0.85);
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.4) 0%, rgba(6, 182, 212, 0.2) 60%, transparent 80%);
+  box-shadow: 0 0 22px rgba(56, 189, 248, 0.5);
+  animation: rippleExpand 0.65s cubic-bezier(0.1, 0.6, 0.3, 1) forwards;
+  pointer-events: none;
+}
+
+/* ===== Water Gradient Text ===== */
+.gradient-text {
+  background: linear-gradient(135deg, #0284c7 0%, #06b6d4 50%, #0369a1 100%);
+  background-size: 200% 200%;
+  animation: waterFlow 4s ease infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.gradient-text-static {
+  background: linear-gradient(135deg, #0369a1 0%, #06b6d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ===== Water Gradient Backgrounds ===== */
+.gradient-ocean {
+  background: linear-gradient(135deg, #0284c7, #06b6d4);
+}
+.gradient-ocean-deep {
+  background: linear-gradient(135deg, #075985, #0284c7, #0891b2);
+}
+.gradient-section {
+  background: linear-gradient(180deg, #ffffff 0%, #edf7ff 50%, #ffffff 100%);
+}
+
+/* ===== Ultra-Luxury Floating Capsule Header ===== */
+.floating-glass-header {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(191, 219, 254, 0.8);
+  box-shadow: 0 10px 30px -5px rgba(2, 132, 199, 0.1), 0 0 15px rgba(56, 189, 248, 0.15);
+}
+
+.floating-glass-header.scrolled {
+  background: rgba(255, 255, 255, 0.98) !important;
+  backdrop-filter: blur(28px) !important;
+  -webkit-backdrop-filter: blur(28px) !important;
+  border-color: rgba(56, 189, 248, 0.9) !important;
+  box-shadow: 0 16px 40px -5px rgba(2, 132, 199, 0.18), 0 0 25px rgba(56, 189, 248, 0.25) !important;
+}
+
+/* ===== Water Cards (Ultra Clean Glow) ===== */
+.water-card {
+  background: #ffffff;
+  border-radius: 1.25rem;
+  border: 1px solid #e0ecf5;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  box-shadow: 0 4px 20px rgba(2, 132, 199, 0.04);
+}
+.water-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(2, 132, 199, 0.12), 0 0 20px rgba(56, 189, 248, 0.2);
+  border-color: #bfdbfe;
+}
+
+/* ===== Buttons ===== */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  background: linear-gradient(135deg, #0284c7 0%, #06b6d4 100%);
+  color: white;
+  font-weight: 700;
+  border-radius: 0.875rem;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(2, 132, 199, 0.28);
+  position: relative;
+  overflow: hidden;
+}
+.btn-primary::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: left 0.6s ease;
+}
+.btn-primary:hover::after {
+  left: 100%;
+}
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(2, 132, 199, 0.38);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  background: #ffffff;
+  color: #0369a1;
+  font-weight: 700;
+  border-radius: 0.875rem;
+  border: 2px solid #bfdbfe;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.btn-secondary:hover {
+  border-color: #38bdf8;
+  background: #eff8ff;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(2, 132, 199, 0.12);
+}
+
+.section-padding {
+  padding: 5rem 1.5rem;
+}
+@media (min-width: 768px) {
+  .section-padding { padding: 6rem 2rem; }
+}
+@media (min-width: 1024px) {
+  .section-padding { padding: 7rem 2rem; }
+}
+
+/* ===== Floating Action Buttons ===== */
+.floating-buttons {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  z-index: 50;
+}
+.floating-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  color: white;
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+.floating-btn::before {
+  content: "";
+  position: absolute;
+  inset: -5px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  animation: pulseGlow 2.5s infinite;
+}
+.floating-btn:hover { transform: scale(1.12); }
+
+.floating-btn--phone {
+  background: linear-gradient(135deg, #059669, #10b981);
+  box-shadow: 0 6px 20px rgba(5, 150, 105, 0.35);
+}
+.floating-btn--zalo {
+  background: linear-gradient(135deg, #0068ff, #0099ff);
+  box-shadow: 0 6px 20px rgba(0, 104, 255, 0.35);
+}
+
+/* ===== FAQ Accordion ===== */
+.faq-item input[type="checkbox"] { display: none; }
+.faq-item label { cursor: pointer; }
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+}
+.faq-item input[type="checkbox"]:checked ~ .faq-answer {
+  max-height: 500px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.faq-item label .faq-icon { transition: transform 0.3s ease; }
+.faq-item input[type="checkbox"]:checked ~ label .faq-icon { transform: rotate(45deg); }
+
+/* ===== Water Bubbles Background (Nằm chìm phía sau chữ z-0) ===== */
+.water-bubbles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+.water-bubbles .bubble {
+  position: absolute;
+  bottom: -50px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.95) 0%, rgba(56, 189, 248, 0.4) 50%, rgba(2, 132, 199, 0.5) 100%);
+  border: 1.5px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 6px 20px rgba(2, 132, 199, 0.22), inset 0 0 10px rgba(255, 255, 255, 0.85);
+  animation: bubbleRiseWobble 12s ease-in-out infinite;
+}
+.water-bubbles .bubble:nth-child(1) { width: 48px; height: 48px; left: 4%; animation-duration: 13s; animation-delay: 0s; }
+.water-bubbles .bubble:nth-child(2) { width: 22px; height: 22px; left: 14%; animation-duration: 9s; animation-delay: 2s; }
+.water-bubbles .bubble:nth-child(3) { width: 56px; height: 56px; left: 26%; animation-duration: 16s; animation-delay: 0.7s; }
+.water-bubbles .bubble:nth-child(4) { width: 30px; height: 30px; left: 38%; animation-duration: 11s; animation-delay: 3s; }
+.water-bubbles .bubble:nth-child(5) { width: 64px; height: 64px; left: 52%; animation-duration: 18s; animation-delay: 1.5s; }
+.water-bubbles .bubble:nth-child(6) { width: 24px; height: 24px; left: 64%; animation-duration: 10s; animation-delay: 4s; }
+.water-bubbles .bubble:nth-child(7) { width: 44px; height: 44px; left: 74%; animation-duration: 14s; animation-delay: 0.3s; }
+.water-bubbles .bubble:nth-child(8) { width: 18px; height: 18px; left: 85%; animation-duration: 8.5s; animation-delay: 2.2s; }
+.water-bubbles .bubble:nth-child(9) { width: 36px; height: 36px; left: 93%; animation-duration: 12s; animation-delay: 1s; }
+.water-bubbles .bubble:nth-child(10) { width: 50px; height: 50px; left: 10%; animation-duration: 15s; animation-delay: 5s; }
+.water-bubbles .bubble:nth-child(11) { width: 28px; height: 28px; left: 44%; animation-duration: 10.5s; animation-delay: 6s; }
+.water-bubbles .bubble:nth-child(12) { width: 40px; height: 40px; left: 78%; animation-duration: 13.5s; animation-delay: 3.5s; }
+
+/* ===== Liquid Morphing Water Orbs ===== */
+.liquid-orb {
+  position: absolute;
+  background: radial-gradient(circle at 40% 40%, rgba(56, 189, 248, 0.25), rgba(6, 182, 212, 0.15) 60%, transparent 80%);
+  filter: blur(20px);
+  animation: liquidDeform 14s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ===== Water Pattern ===== */
+.water-pattern {
+  background-image:
+    radial-gradient(ellipse at 15% 40%, rgba(14, 165, 233, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse at 85% 20%, rgba(6, 182, 212, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse at 50% 85%, rgba(56, 189, 248, 0.06) 0%, transparent 60%);
+}
+
+.orbit-ring {
+  border: 1.5px dashed rgba(14, 165, 233, 0.18);
+  border-radius: 50%;
+  position: absolute;
+  animation: spinSlow 22s linear infinite;
+}
+
+::-webkit-scrollbar { width: 9px; }
+::-webkit-scrollbar-track { background: #f4fafe; }
+::-webkit-scrollbar-thumb { background: #bfdbfe; border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: #7dd3fc; }

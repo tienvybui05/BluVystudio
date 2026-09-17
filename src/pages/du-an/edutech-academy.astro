@@ -1,0 +1,97 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ContactForm from "../../components/ContactForm.astro";
+---
+
+<BaseLayout
+  title="EduTech Academy — Học Viện Lập Trình & AI Thực Chiến"
+  description="Khóa học lập trình Fullstack & AI 6 tháng thực chiến. Mentor 1-on-1 từ Tech Leads Google, cam kết giới thiệu việc làm sau khóa học."
+>
+  <!-- ===== DEMO PROJECT NAV HEADER ===== -->
+  <div class="bg-indigo-950 text-white py-2 px-4 text-xs flex justify-between items-center border-b border-indigo-800">
+    <div class="flex items-center gap-2">
+      <span class="px-2 py-0.5 rounded bg-indigo-500 text-white font-bold">DEMO LIVE</span>
+      <span class="text-indigo-200">Mẫu Landing Page Khóa Học Online EdTech — Thiết kế bởi BluVy</span>
+    </div>
+    <a href="/#du-an" class="text-indigo-300 hover:text-white font-semibold underline flex items-center gap-1">
+      ← Quay về BluVy
+    </a>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <section class="section-padding relative overflow-hidden bg-gradient-to-br from-indigo-950 via-purple-950 to-indigo-900 text-white" id="edutech-hero">
+    <div class="max-w-7xl mx-auto relative z-10">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-7">
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-indigo-200 text-xs font-bold mb-6">
+            🎓 KHÓA HỌC LẬP TRÌNH FULLSTACK & AI THỰC CHUYÊN
+          </div>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight text-white">
+            EduTech Academy <br />
+            <span class="bg-gradient-to-r from-indigo-300 via-purple-300 to-pink-300 bg-clip-text text-transparent">Trở Thành Fullstack Developer</span>
+          </h1>
+          <p class="text-lg md:text-xl text-indigo-100/90 leading-relaxed mb-8 max-w-2xl">
+            Đào tạo từ Zero đến Hero trong 6 tháng. Thực chiến trên 5 dự án thực tế với sự hướng dẫn 1-on-1 từ Tech Leads Google & Shopee.
+          </p>
+          <div class="flex flex-wrap gap-4 mb-8">
+            <a href="#register" class="btn-primary !bg-indigo-500 hover:!bg-indigo-600">
+              🚀 Đăng Ký Học Thử Miễn Phí 7 Ngày
+            </a>
+            <a href="#curriculum" class="btn-secondary !bg-white/10 !text-white !border-white/30 hover:!bg-white/20">
+              📖 Tải Lộ Trình Đào Tạo PDF
+            </a>
+          </div>
+        </div>
+        <div class="lg:col-span-5">
+          <div class="water-card p-8 bg-white text-slate-800 shadow-2xl rounded-3xl">
+            <h3 class="text-2xl font-extrabold text-indigo-950 mb-2 text-center">Đăng Ký Nhận Học Bổng 30%</h3>
+            <p class="text-slate-500 text-xs text-center mb-6">Chỉ còn 15 suất ưu đãi cho khóa học tháng này</p>
+            <ContactForm formId="edutech-hero-form" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== COURSES ===== -->
+  <section class="section-padding bg-white" id="curriculum">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <span class="text-indigo-600 text-xs font-bold uppercase tracking-[0.2em]">LỘ TRÌNH THỰC CHUYÊN</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mt-2 mb-4">Khóa Học Hot Nhất <span class="text-indigo-600">2026</span></h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        {[
+          { name: "Fullstack Web Developer", desc: "React, Next.js, Node.js, TailwindCSS & PostgreSQL", duration: "6 Tháng (Online / Offline)", salary: "15M - 25M / Tháng", icon: "💻" },
+          { name: "AI & Machine Learning Specialist", desc: "Python, PyTorch, LLM Agent Building, OpenAI API & RAG", duration: "5 Tháng (Chuyên Sâu)", salary: "20M - 35M / Tháng", icon: "🤖" },
+          { name: "Mobile App React Native", desc: "Lập trình ứng dụng iOS & Android đa nền tảng", duration: "4 Tháng (Thực Hành)", salary: "15M - 28M / Tháng", icon: "📱" },
+        ].map((c) => (
+          <div class="water-card p-8 text-center border-indigo-100 hover:border-indigo-300 flex flex-col justify-between">
+            <div>
+              <div class="text-5xl mb-4">{c.icon}</div>
+              <h3 class="text-xl font-bold text-slate-900 mb-2">{c.name}</h3>
+              <p class="text-slate-500 text-sm mb-4 leading-relaxed">{c.desc}</p>
+              <div class="text-xs text-slate-400 mb-2">Thời gian: <strong>{c.duration}</strong></div>
+              <div class="text-lg font-extrabold text-indigo-600 mb-6">Mức lương: {c.salary}</div>
+            </div>
+            <a href="#register" class="btn-primary w-full justify-center !bg-indigo-500 hover:!bg-indigo-600">Đăng Ký Tư Vấn Khóa Học</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FORM ===== -->
+  <section class="section-padding bg-indigo-50/50" id="register">
+    <div class="max-w-3xl mx-auto">
+      <div class="water-card p-10 bg-white border-indigo-200 shadow-2xl">
+        <div class="text-center mb-8">
+          <h2 class="text-3xl font-extrabold text-slate-900 mb-2">Đăng Ký Học Thử Miễn Phí 7 Ngày</h2>
+          <p class="text-slate-500 text-sm">Nhận ngay tài liệu lộ trình lập trình + Voucher học bổng 3.000.000đ.</p>
+        </div>
+        <ContactForm formId="edutech-form-footer" />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

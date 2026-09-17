@@ -1,0 +1,318 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const partners = [
+  { name: "FinTech Corp", icon: "💳" },
+  { name: "Phở Bắc", icon: "🍜" },
+  { name: "MedCare", icon: "🏥" },
+  { name: "EduTech VN", icon: "🎓" },
+  { name: "AutoViet", icon: "🚗" },
+  { name: "Grand Hotel", icon: "🏨" },
+  { name: "ShopFast", icon: "🛒" },
+  { name: "SpaCare", icon: "🌿" },
+];
+---
+
+<BaseLayout
+  title="Giới Thiệu — BluVy"
+  description="BluVy — Đội ngũ kỹ sư web trẻ, thực chiến, tập trung vào tốc độ tải trang và tỷ lệ chuyển đổi. Cam kết tải trang dưới 2 giây, SEO kỹ thuật 100%."
+>
+  <!-- ===== HERO ===== -->
+  <section class="section-padding relative overflow-hidden water-pattern" id="gioi-thieu-hero">
+    <div class="water-bubbles">
+      <div class="bubble"></div><div class="bubble"></div><div class="bubble"></div>
+      <div class="bubble"></div><div class="bubble"></div><div class="bubble"></div>
+    </div>
+    <div class="max-w-4xl mx-auto text-center relative z-10">
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-ocean-50 text-ocean-700 text-xs font-bold mb-6 border border-ocean-200 shadow-sm">
+        🌊 GIỚI THIỆU BLUVY
+      </div>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mt-3 mb-6 text-ocean-950 leading-tight">
+        Đội ngũ kỹ sư web <br />
+        <span class="gradient-text">trẻ & thực chiến</span>
+      </h1>
+      <p class="text-lg md:text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto mb-8">
+        Chúng tôi không chỉ thiết kế website — chúng tôi xây dựng <strong class="text-ocean-800 font-bold">công cụ bán hàng online</strong> hiệu quả nhất cho chủ shop và doanh nghiệp vừa & nhỏ tại Việt Nam.
+      </p>
+
+      <div class="flex flex-wrap items-center justify-center gap-4">
+        <a href="#cau-chuyen" class="btn-primary">
+          Khám Phá Câu Chuyện
+        </a>
+        <a href="/lien-he" class="btn-secondary">
+          💬 Liên Hệ Đội Ngũ
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MARQUEE PARTNER LOGOS (SLIDING INFINITELY - SCREENSHOT 1) ===== -->
+  <section class="py-10 bg-gradient-to-b from-ocean-50/60 via-white to-ocean-50/40 overflow-hidden relative" id="doi-tac">
+    <div class="max-w-7xl mx-auto px-4 mb-6 text-center">
+      <p class="text-xs font-bold text-slate-400 uppercase tracking-[0.2em]">TIN TƯỞNG BỞI HÀNG TRĂM DOANH NGHIỆP VIỆT NAM</p>
+    </div>
+    <div class="relative w-full overflow-hidden flex">
+      <!-- Gradient Fades on edges -->
+      <div class="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
+      <div class="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
+
+      <!-- Infinite Marquee Track -->
+      <div class="animate-marquee flex items-center gap-6 shrink-0">
+        {[...partners, ...partners, ...partners, ...partners].map((p, i) => (
+          <div key={i} class="flex items-center gap-3 px-6 py-3 rounded-full bg-ocean-50/60 border border-ocean-100 hover:border-ocean-300 transition-all cursor-pointer hover:scale-105 shrink-0">
+            <span class="text-xl">{p.icon}</span>
+            <span class="text-sm font-bold text-ocean-900 whitespace-nowrap">{p.name}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CÂU CHUYỆN ===== -->
+  <section class="section-padding gradient-section" id="cau-chuyen">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <span class="text-ocean-500 text-xs font-bold uppercase tracking-[0.2em]">CÂU CHUYỆN SỨ MỆNH</span>
+          <h2 class="text-3xl md:text-4xl font-extrabold mt-3 mb-6 text-ocean-950">
+            Từ <span class="gradient-text">nỗi đau thực tế</span> đến giải pháp
+          </h2>
+          <div class="space-y-4 text-slate-600 leading-relaxed text-base">
+            <p>
+              BluVy được thành lập bởi nhóm kỹ sư phần mềm từng chứng kiến quá nhiều doanh nghiệp nhỏ <strong class="text-ocean-900 font-bold">mất khách hàng</strong> vì website tải chậm, giao diện lỗi thời, không thân thiện mobile.
+            </p>
+            <p>
+              Chúng tôi tin rằng: <strong class="text-ocean-900 font-bold">Mọi doanh nghiệp đều xứng đáng có một website nhanh, đẹp và thực sự mang lại doanh thu</strong> — không phải một sản phẩm "cho có" rồi bỏ xó.
+            </p>
+            <p>
+              Với công nghệ Astro SSG tiên tiến (tải trang &lt; 2 giây), kết hợp kinh nghiệm tối ưu chuyển đổi từ hàng trăm dự án, chúng tôi tự tin mang đến giải pháp web vượt kỳ vọng cho mọi ngân sách.
+            </p>
+          </div>
+        </div>
+
+        <!-- Stats Grid (Screenshot 2 Style) -->
+        <div class="grid grid-cols-2 gap-6">
+          <div class="water-card p-8 text-center group">
+            <div class="text-3xl mb-2 group-hover:scale-125 transition-transform">🚀</div>
+            <div class="stat-number text-4xl font-extrabold gradient-text-static mb-2 transition-all duration-300" data-target="500" data-suffix="+">0+</div>
+            <p class="text-slate-600 text-sm font-semibold">Dự án hoàn thành</p>
+          </div>
+          <div class="water-card p-8 text-center group">
+            <div class="text-3xl mb-2 group-hover:scale-125 transition-transform">👥</div>
+            <div class="stat-number text-4xl font-extrabold gradient-text-static mb-2 transition-all duration-300" data-target="200" data-suffix="+">0+</div>
+            <p class="text-slate-600 text-sm font-semibold">Khách hàng tin tưởng</p>
+          </div>
+          <div class="water-card p-8 text-center group">
+            <div class="text-3xl mb-2 group-hover:scale-125 transition-transform">⭐</div>
+            <div class="stat-number text-4xl font-extrabold gradient-text-static mb-2 transition-all duration-300" data-target="98" data-suffix="%">0%</div>
+            <p class="text-slate-600 text-sm font-semibold">Khách hàng hài lòng</p>
+          </div>
+          <div class="water-card p-8 text-center group">
+            <div class="text-3xl mb-2 group-hover:scale-125 transition-transform">🏆</div>
+            <div class="stat-number text-4xl font-extrabold gradient-text-static mb-2 transition-all duration-300" data-target="3" data-suffix="+ Năm">0+ Năm</div>
+            <p class="text-slate-600 text-sm font-semibold">Kinh nghiệm thực chiến</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 4 CAM KẾT (SCREENSHOT 3) ===== -->
+  <section class="section-padding bg-white" id="cam-ket">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <span class="text-ocean-500 text-xs font-bold uppercase tracking-[0.2em]">CAM KẾT</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold mt-3 mb-4 text-ocean-950">4 tiêu chí <span class="gradient-text">cốt lõi</span></h2>
+        <p class="text-slate-500 text-lg max-w-2xl mx-auto">Mỗi dự án chúng tôi nhận đều phải đạt cả 4 tiêu chí này.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="water-card p-8 text-center group flex flex-col items-center">
+          <div class="w-16 h-16 rounded-2xl bg-ocean-50 flex items-center justify-center mb-6 group-hover:bg-ocean-100 transition-colors">
+            <svg class="w-8 h-8 text-ocean-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-ocean-900 mb-2">Tải trang &lt; 2 giây</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">PageSpeed Performance Score luôn đạt 95+ điểm.</p>
+        </div>
+
+        <div class="water-card p-8 text-center group flex flex-col items-center">
+          <div class="w-16 h-16 rounded-2xl bg-aqua-50 flex items-center justify-center mb-6 group-hover:bg-aqua-100 transition-colors">
+            <svg class="w-8 h-8 text-aqua-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-ocean-900 mb-2">SEO kỹ thuật 100%</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">Đạt điểm tuyệt đối các chỉ số SEO của Google Lighthouse.</p>
+        </div>
+
+        <div class="water-card p-8 text-center group flex flex-col items-center">
+          <div class="w-16 h-16 rounded-2xl bg-blue-50 flex items-center justify-center mb-6 group-hover:bg-blue-100 transition-colors">
+            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-ocean-900 mb-2">Không phát sinh phí</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">Báo giá trọn gói, rõ ràng. Không phí ẩn, không phụ thu.</p>
+        </div>
+
+        <div class="water-card p-8 text-center group flex flex-col items-center">
+          <div class="w-16 h-16 rounded-2xl bg-emerald-50 flex items-center justify-center mb-6 group-hover:bg-emerald-100 transition-colors">
+            <svg class="w-8 h-8 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-ocean-900 mb-2">Bàn giao đúng hẹn</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">Cam kết hoàn thành đúng timeline đã thống nhất.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ĐỘI NGŨ NÒNG CỐT ===== -->
+  <section class="section-padding gradient-section" id="doi-ngu">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <span class="text-ocean-500 text-xs font-bold uppercase tracking-[0.2em]">TEAM MEMBERS</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold mt-3 mb-4 text-ocean-950">Đội ngũ <span class="gradient-text">nòng cốt</span></h2>
+        <p class="text-slate-500 text-lg max-w-2xl mx-auto">Những kỹ sư và nhà thiết kế nhiệt huyết đằng sau mọi dự án thành công.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="water-card p-8 text-center">
+          <div class="w-24 h-24 mx-auto rounded-full gradient-ocean p-1 mb-6 shadow-lg shadow-ocean-200">
+            <div class="w-full h-full rounded-full bg-white flex items-center justify-center text-3xl">👨‍💻</div>
+          </div>
+          <h3 class="text-xl font-bold text-ocean-950 mb-1">Trần Minh Đức</h3>
+          <p class="text-ocean-600 font-medium text-sm mb-4">Founder & Lead Web Engineer</p>
+          <p class="text-slate-500 text-sm leading-relaxed">5+ năm lập trình Frontend & Tối ưu hiệu năng website chuẩn Google Lighthouse.</p>
+        </div>
+
+        <div class="water-card p-8 text-center">
+          <div class="w-24 h-24 mx-auto rounded-full bg-gradient-to-tr from-aqua-400 to-ocean-500 p-1 mb-6 shadow-lg shadow-aqua-200">
+            <div class="w-full h-full rounded-full bg-white flex items-center justify-center text-3xl">🎨</div>
+          </div>
+          <h3 class="text-xl font-bold text-ocean-950 mb-1">Nguyễn Mai Phương</h3>
+          <p class="text-aqua-600 font-medium text-sm mb-4">UI/UX Designer Specialist</p>
+          <p class="text-slate-500 text-sm leading-relaxed">Chuyên gia thiết kế giao diện sáng tạo, định hình phong cách hiện đại và tăng trải nghiệm mua hàng.</p>
+        </div>
+
+        <div class="water-card p-8 text-center">
+          <div class="w-24 h-24 mx-auto rounded-full bg-gradient-to-tr from-blue-400 to-ocean-600 p-1 mb-6 shadow-lg shadow-blue-200">
+            <div class="w-full h-full rounded-full bg-white flex items-center justify-center text-3xl">🚀</div>
+          </div>
+          <h3 class="text-xl font-bold text-ocean-950 mb-1">Lê Quốc Bảo</h3>
+          <p class="text-blue-600 font-medium text-sm mb-4">SEO & Growth Lead</p>
+          <p class="text-slate-500 text-sm leading-relaxed">Tối ưu cấu trúc SEO On-Page kỹ thuật giúp hàng trăm website leo TOP 1 Google nhanh chóng.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== QUY TRÌNH LÀM VIỆC ===== -->
+  <section class="section-padding bg-white relative overflow-hidden" id="quy-trinh">
+    <div class="water-bubbles">
+      <div class="bubble"></div><div class="bubble"></div><div class="bubble"></div>
+      <div class="bubble"></div><div class="bubble"></div>
+    </div>
+    <div class="max-w-7xl mx-auto relative z-10">
+      <div class="text-center mb-16">
+        <span class="text-ocean-500 text-xs font-bold uppercase tracking-[0.2em]">QUY TRÌNH</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold mt-3 mb-4 text-ocean-950">Làm việc cùng BluVy <span class="gradient-text">đơn giản lắm</span></h2>
+        <p class="text-slate-500 text-lg max-w-2xl mx-auto">Chỉ 5 bước — từ lúc nhắn tin đến khi website lên sóng.</p>
+      </div>
+
+      <div class="relative">
+        <!-- Connecting line (desktop) -->
+        <div class="hidden lg:block absolute top-[52px] left-[calc(10%+28px)] right-[calc(10%+28px)] h-0.5 bg-gradient-to-r from-ocean-200 via-ocean-400 to-ocean-200 z-0"></div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-5 gap-8 lg:gap-4 relative z-10">
+          {[
+            {
+              step: "01",
+              icon: `<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>`,
+              title: "Tư vấn miễn phí",
+              desc: "Bạn nhắn tin hoặc điền form. Chúng tôi liên hệ trong vòng 30 phút để nghe yêu cầu.",
+              color: "bg-ocean-500",
+              lightColor: "bg-ocean-50",
+              borderColor: "border-ocean-200",
+            },
+            {
+              step: "02",
+              icon: `<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>`,
+              title: "Báo giá & ký hợp đồng",
+              desc: "Nhận bảng báo giá chi tiết, rõ ràng. Chốt xong là bắt đầu — không mất thêm một đồng phụ phí.",
+              color: "bg-aqua-500",
+              lightColor: "bg-aqua-50",
+              borderColor: "border-aqua-200",
+            },
+            {
+              step: "03",
+              icon: `<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg>`,
+              title: "Thiết kế & lập trình",
+              desc: "Đội ngũ bắt tay vào làm. Bạn được xem bản thiết kế trước khi chúng tôi code chính thức.",
+              color: "bg-blue-500",
+              lightColor: "bg-blue-50",
+              borderColor: "border-blue-200",
+            },
+            {
+              step: "04",
+              icon: `<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>`,
+              title: "Duyệt & chỉnh sửa",
+              desc: "Bạn xem bản demo thực tế, phản hồi. Chúng tôi chỉnh sửa đến khi bạn ưng ý 100%.",
+              color: "bg-violet-500",
+              lightColor: "bg-violet-50",
+              borderColor: "border-violet-200",
+            },
+            {
+              step: "05",
+              icon: `<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3l14 9-14 9V3z"/></svg>`,
+              title: "Lên sóng & bàn giao",
+              desc: "Website live, bàn giao toàn bộ tài khoản. Bảo hành kỹ thuật 12 tháng kể từ ngày ra mắt.",
+              color: "bg-emerald-500",
+              lightColor: "bg-emerald-50",
+              borderColor: "border-emerald-200",
+            },
+          ].map((item) => (
+            <div class="flex flex-col items-center text-center group">
+              <div class="relative mb-5">
+                <div class={`w-14 h-14 rounded-2xl ${item.color} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                  <Fragment set:html={item.icon} />
+                </div>
+                <div class="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-white border-2 border-ocean-200 flex items-center justify-center">
+                  <span class="text-[9px] font-extrabold text-ocean-700">{item.step}</span>
+                </div>
+              </div>
+              <div class={`water-card p-5 w-full ${item.lightColor} border ${item.borderColor} group-hover:shadow-lg group-hover:-translate-y-1 transition-all duration-300`}>
+                <h3 class="text-base font-bold text-ocean-950 mb-2">{item.title}</h3>
+                <p class="text-slate-500 text-xs leading-relaxed">{item.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="text-center mt-14">
+        <p class="text-slate-500 text-sm mb-5">Từ lúc liên hệ đến khi website lên sóng — <strong class="text-ocean-800">chỉ 3 đến 7 ngày làm việc</strong>.</p>
+        <a href="/lien-he" class="btn-primary inline-flex items-center gap-2">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+          Bắt đầu ngay hôm nay
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="section-padding gradient-section" id="cta-gioi-thieu">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-extrabold mb-6 text-ocean-950">
+        Sẵn sàng <span class="gradient-text">nâng tầm</span> thương hiệu cùng chúng tôi?
+      </h2>
+      <p class="text-slate-600 text-lg mb-8 max-w-2xl mx-auto">
+        Liên hệ ngay hôm nay để được đội ngũ kỹ sư BluVy tư vấn giải pháp phù hợp nhất.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/lien-he" class="btn-primary text-center">
+          Tư Vấn Miễn Phí Ngay
+        </a>
+        <a href="/bang-gia" class="btn-secondary text-center">
+          Xem Bảng Giá Dịch Vụ
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+

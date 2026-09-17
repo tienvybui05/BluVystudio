@@ -1,0 +1,138 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ContactForm from "../components/ContactForm.astro";
+
+const services = [
+  {
+    icon: `<svg class="w-8 h-8 text-ocean-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>`,
+    title: "Thiết Kế Landing Page Siêu Tốc",
+    price: "Từ 500.000đ",
+    description: "Trang đích 1 trang chuyên biệt cho chiến dịch quảng cáo Facebook Ads, Google Ads. Tối ưu chuyển đổi với CTA rõ ràng, form thu thập lead, tích hợp Facebook Pixel & Zalo/Hotline.",
+    features: ["Thiết kế 1 trang đích chuẩn UI/UX", "Tối ưu tỷ lệ chuyển đổi (CRO)", "Responsive Mobile & Tablet 100%", "Tốc độ tải cực nhanh < 1.5s", "Bàn giao nhanh trong 2 - 3 ngày"],
+    bgClass: "bg-ocean-50 group-hover:bg-ocean-100",
+  },
+  {
+    icon: `<svg class="w-8 h-8 text-aqua-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>`,
+    title: "Website Thuần Giới Thiệu",
+    price: "Từ 1.500.000đ",
+    description: "Website đa trang giới thiệu thương hiệu, công ty, dịch vụ & dự án. Thiết kế hiện đại hiệu ứng Thủy mượt mà, chuẩn SEO On-Page kỹ thuật 100%.",
+    features: ["5 - 7 trang nội dung chuẩn doanh nghiệp", "Chuẩn SEO On-Page kỹ thuật 100%", "Tích hợp Google Maps + Zalo Chat", "Giao diện độc bản phong cách Thủy", "Bảo hành kỹ thuật 12 tháng"],
+    bgClass: "bg-aqua-50 group-hover:bg-aqua-100",
+  },
+  {
+    icon: `<svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"/></svg>`,
+    title: "Website Quản Lý & CMS Cao Cấp",
+    price: "3.500.000đ",
+    description: "Website doanh nghiệp tích hợp hệ thống CMS quản trị bài viết & tin tức. Dễ dàng tự đăng bài, chỉnh sửa sản phẩm mà không cần biết lập trình.",
+    features: ["Trang Admin CMS quản trị trực quan", "Tự do đăng/sửa/xóa bài viết, blog tin tức", "Tặng Miễn Phí Domain .com + Hosting 1 năm", "Tối ưu SEO bài viết tự động & Schema", "Hướng dẫn 1:1 + Bảo hành 12 tháng"],
+    bgClass: "bg-blue-50 group-hover:bg-blue-100",
+  },
+  {
+    icon: `<svg class="w-8 h-8 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>`,
+    title: "Tối Ưu Tốc Độ & Bảo Trì Website",
+    price: "Tư vấn báo giá",
+    description: "Audit toàn diện và tối ưu hiệu suất website hiện tại. Cải thiện Core Web Vitals (LCP, FID, CLS), nén ảnh WebP, nâng điểm Lighthouse xanh 95+.",
+    features: ["Audit PageSpeed toàn diện", "Tối ưu Core Web Vitals", "Nén ảnh WebP/AVIF tự động", "Cải thiện SEO kỹ thuật", "Bảo trì & nâng cấp hệ thống"],
+    bgClass: "bg-emerald-50 group-hover:bg-emerald-100",
+  },
+];
+---
+
+<BaseLayout
+  title="Dịch Vụ Thiết Kế Website"
+  description="Dịch vụ thiết kế Landing Page 500k, Web thuần giới thiệu 1500k, Web quản lý CMS 3500k. Chuẩn SEO, tải nhanh dưới 2 giây, bảo hành 12 tháng."
+>
+  <!-- ===== HERO ===== -->
+  <section class="section-padding relative overflow-hidden water-pattern" id="dich-vu-hero">
+    <div class="water-bubbles">
+      <div class="bubble"></div><div class="bubble"></div><div class="bubble"></div>
+      <div class="bubble"></div><div class="bubble"></div><div class="bubble"></div>
+    </div>
+    <div class="max-w-4xl mx-auto text-center relative z-10">
+      <span class="text-ocean-500 text-sm font-semibold uppercase tracking-widest">Dịch vụ của chúng tôi</span>
+      <h1 class="text-4xl md:text-5xl font-extrabold mt-3 mb-6 text-ocean-950">
+        Giải pháp web <span class="gradient-text">toàn diện</span>
+      </h1>
+      <p class="text-lg md:text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
+        Từ Landing Page 500k đến website quản lý CMS 3500k — tất cả đều được tối ưu tốc độ, chuẩn SEO, và nâng cao tỷ lệ chuyển đổi.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES GRID ===== -->
+  <section class="section-padding !pt-0 bg-white" id="danh-sach-dich-vu">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-8">
+        {services.map((service) => (
+          <div class="water-card p-8 lg:p-10 group flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-6">
+                <div class={`w-16 h-16 rounded-2xl flex items-center justify-center transition-colors ${service.bgClass}`}>
+                  <Fragment set:html={service.icon} />
+                </div>
+                <span class="px-4 py-1.5 rounded-full bg-ocean-50 border border-ocean-200 text-ocean-700 font-extrabold text-sm shadow-xs">
+                  {service.price}
+                </span>
+              </div>
+              <h2 class="text-2xl font-bold text-ocean-900 mb-3">{service.title}</h2>
+              <p class="text-slate-600 leading-relaxed mb-6 text-sm">{service.description}</p>
+              <ul class="space-y-3 mb-8">
+                {service.features.map((feature) => (
+                  <li class="flex items-center gap-3 text-sm text-slate-600">
+                    <svg class="w-5 h-5 text-emerald-500 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <a href="#form-tu-van" class="btn-secondary inline-flex w-fit items-center gap-2">
+              Tư vấn dịch vụ này
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA + FORM ===== -->
+  <section class="section-padding gradient-section relative overflow-hidden" id="form-tu-van">
+    <div class="max-w-7xl mx-auto relative z-10">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <span class="text-ocean-500 text-sm font-semibold uppercase tracking-widest">Bắt đầu ngay</span>
+          <h2 class="text-3xl md:text-4xl font-extrabold mt-3 mb-4 text-ocean-950">
+            Nhận <span class="gradient-text">tư vấn miễn phí</span>
+          </h2>
+          <p class="text-slate-600 text-lg mb-8 leading-relaxed">
+            Để lại thông tin, chúng tôi sẽ liên hệ tư vấn giải pháp phù hợp nhất với nhu cầu và ngân sách của bạn.
+          </p>
+          <div class="space-y-4">
+            <div class="flex items-center gap-4 water-card p-4">
+              <div class="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5 text-emerald-600" fill="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </div>
+              <p class="text-slate-700 text-sm">Tư vấn <strong class="text-ocean-900">miễn phí 100%</strong>, không ràng buộc</p>
+            </div>
+            <div class="flex items-center gap-4 water-card p-4">
+              <div class="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5 text-emerald-600" fill="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </div>
+              <p class="text-slate-700 text-sm">Phản hồi trong <strong class="text-ocean-900">30 phút</strong> (giờ hành chính)</p>
+            </div>
+            <div class="flex items-center gap-4 water-card p-4">
+              <div class="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5 text-emerald-600" fill="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </div>
+              <p class="text-slate-700 text-sm">Nhận <strong class="text-ocean-900">báo giá chi tiết</strong> trong 24h</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="water-card p-8 md:p-10 shadow-xl shadow-ocean-100/40">
+          <ContactForm formId="service-contact-form" />
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

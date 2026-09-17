@@ -1,0 +1,245 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ContactForm from "../../components/ContactForm.astro";
+
+export async function getStaticPaths() {
+  const projects = [
+    {
+      slug: "bds-vinhomes",
+      name: "Vinhomes Grand Horizon",
+      desc: "Landing Page Bất Động Sản & Căn Hộ Cao Cấp",
+      category: "Bất Động Sản",
+      pageSpeed: "99/100",
+      badge: "🏢 DỰ ÁN BẤT ĐỘNG SẢN CAO CẤP",
+      headline: "Căn Hộ Hạng Sang Trung Tâm Thành Phố",
+      gradient: "from-ocean-600 via-sky-500 to-aqua-500",
+      detail: "Sở hữu căn hộ tầm nhìn sông Panorama 360 độ. Ưu đãi chiết khấu 8% + Tặng gói nội thất 150 triệu.",
+      stats: [
+        { value: "8.5%", label: "Tỷ Lệ Chuyển Đổi Ads" },
+        { value: "350+", label: "Khách Đăng Ký Tham Quan" },
+        { value: "99/100", label: "Google PageSpeed" },
+      ],
+      features: [
+        { title: "Mặt bằng căn hộ 3D tương tác", desc: "Xem chi tiết thiết kế từng phòng và góc nhìn panorama 360 độ." },
+        { title: "Bảng giá & Tiến độ thanh toán 2026", desc: "Cập nhật bảng giá niêm yết từ chủ đầu tư và chính sách ngân hàng 0%." },
+        { title: "Vị trí kim cương kết nối Metro", desc: "Liền kề ga tuyến Metro số 1, di chuyển trung tâm chỉ 10 phút." },
+        { title: "Tải file PDF Brochure miễn phí", desc: "Tải ngay bộ tài liệu pháp lý và catalogue chi tiết dự án." },
+      ],
+      ctaText: "Đăng Ký Nhận Báo Giá Căn Hộ VIP",
+    },
+    {
+      slug: "thoi-trang-lumia",
+      name: "Lumia Organic Beauty",
+      desc: "Landing Page Mỹ Phẩm & Skincare Thuần Chay",
+      category: "E-Commerce",
+      pageSpeed: "98/100",
+      badge: "🌿 MỸ PHẨM THUẦN CHAY 100% ORGANIC",
+      headline: "Tái Tạo Làn Da Trắng Sáng Tự Nhiên",
+      gradient: "from-rose-500 via-pink-400 to-ocean-500",
+      detail: "Chiết xuất từ thảo mộc hữu cơ thiên nhiên. Giúp mờ thâm nám, cấp ẩm 24h và chống lão hóa da vượt trội.",
+      stats: [
+        { value: "+250%", label: "Tăng Trưởng Doanh Thu" },
+        { value: "12,000+", label: "Đơn Hàng Bán Ra" },
+        { value: "4.9/5", label: "Đánh Giá Từ KOC" },
+      ],
+      features: [
+        { title: "Chứng nhận KBY Organic Châu Âu", desc: "100% thành phần thảo mộc hữu cơ an toàn cho mọi làn da nhạy cảm." },
+        { title: "Bộ sưu tập Mua 1 Tặng 1", desc: "Ưu đãi độc quyền cho 100 khách hàng đặt mua sớm nhất hôm nay." },
+        { title: "Miễn phí giao hàng toàn quốc", desc: "Giao hàng hỏa tốc trong 2 giờ tại TP.HCM & Hà Nội." },
+        { title: "Cam kết đổi trả 1-1 trong 30 ngày", desc: "Hoàn tiền 200% nếu phát hiện hàng giả hoặc kích ứng da." },
+      ],
+      ctaText: "Nhận Ưu Đãi Mua 1 Tặng 1 Ngay",
+    },
+    {
+      slug: "nha-khoa-medcare",
+      name: "MedCare Dental",
+      desc: "Landing Page Nha Khoa Quốc Tế & Thẩm Mỹ",
+      category: "Y Tế / Nha Khoa",
+      pageSpeed: "100/100",
+      badge: "🏥 NHA KHOA THẨM MỸ QUỐC TẾ",
+      headline: "Nụ Cười Rạng Rỡ — Tự Tin Tỏa Sáng",
+      gradient: "from-aqua-600 via-cyan-500 to-blue-600",
+      detail: "Chuyên gia niềng răng trong suốt Invisalign, bọc răng sứ Nano và Trồng răng Implant tiêu chuẩn Châu Âu.",
+      stats: [
+        { value: "+180%", label: "Khách Đặt Lịch Online" },
+        { value: "5,000+", label: "Ca Chỉnh Nha Thành Công" },
+        { value: "100%", label: "Khách Hàng Hài Lòng" },
+      ],
+      features: [
+        { title: "Bác sĩ Thạc sĩ 15 năm kinh nghiệm", desc: "Đội ngũ chuyên gia tốt nghiệp ĐH Y Dược và tu nghiệp tại Pháp." },
+        { title: "Công nghệ quét 3D iTero Element 5D", desc: "Xem trước kết quả niềng răng chuẩn xác chỉ sau 60 giây." },
+        { title: "Trả góp 0% lãi suất hàng tháng", desc: "Hỗ trợ trả góp linh hoạt chỉ từ 1 triệu đồng/tháng." },
+        { title: "Bảo hành trọn đời răng sứ", desc: "Cấp thẻ bảo hành chính hãng chính thức trên toàn quốc." },
+      ],
+      ctaText: "Đặt Lịch Khám & Tư Vấn Miễn Phí",
+    },
+    {
+      slug: "nha-hang-pho-bac",
+      name: "Phở Bắc Tradition",
+      desc: "Landing Page Chuỗi Nhà Hàng Ẩm Thực Việt",
+      category: "F&B / Nhà Hàng",
+      pageSpeed: "97/100",
+      badge: "🍜 CHUỖI NHÀ HÀNG ẨM THỰC TRUYỀN THỐNG",
+      headline: "Hương Vị Phở Gia Truyền 3 Thế Hệ",
+      gradient: "from-amber-500 via-orange-400 to-ocean-600",
+      detail: "Nước dùng hầm từ xương bò tươi 24 giờ cùng bánh phở tráng tay thủ công mỗi ngày. Đặt bàn trước giảm 10%.",
+      stats: [
+        { value: "3,000+", label: "Lượt Đặt Bàn / Tháng" },
+        { value: "4.8/5", label: "Đánh Giá TripAdvisor" },
+        { value: "15 Phút", label: "Thời Gian Phục Vụ Nhanh" },
+      ],
+      features: [
+        { title: "Thực đơn 30+ món ngon truyền thống", desc: "Đa dạng các món phở bò tái lăn, phở gà ta, nem rán Hà Nội." },
+        { title: "Đặt bàn VIP riêng tư gia đình", desc: "Không gian máy lạnh hiện đại sang trọng mang đậm dấu ấn Việt." },
+        { title: "Voucher giảm 10% khi đặt trước", desc: "Nhận ngay mã ưu đãi giảm 10% tổng hóa đơn khi đặt bàn trước." },
+        { title: "Đảm bảo vệ sinh ATTP chuẩn ISO", desc: "Nguồn nguyên liệu bò tươi thảo nguyên sạch 100%." },
+      ],
+      ctaText: "Đặt Bàn Trước Nhận Giảm 10%",
+    },
+    {
+      slug: "edutech-academy",
+      name: "EduTech Academy",
+      desc: "Landing Page Học Viện Lập Trình & AI",
+      category: "Giáo Dục / EdTech",
+      pageSpeed: "99/100",
+      badge: "🎓 HỌC VIỆN CÔNG NGHỆ & LẬP TRÌNH AI",
+      headline: "Bứt Phá Sự Nghiệp Lập Trình Viên Fullstack",
+      gradient: "from-indigo-600 via-purple-500 to-ocean-500",
+      detail: "Lộ trình đào tạo 6 tháng thực chiến cùng chuyên gia Google & Tech Leads. Cam kết giới thiệu việc làm sau khóa học.",
+      stats: [
+        { value: "95%", label: "Học Viên Có Việc Làm" },
+        { value: "2,500+", label: "Cựu Học Viên Tốt Nghiệp" },
+        { value: "15M - 35M", label: "Mức Lương Khởi Điểm" },
+      ],
+      features: [
+        { title: "Luyện code thực tế trên dự án thật", desc: "Xây dựng 5 dự án thực chiến chuẩn doanh nghiệp cho Portfolio." },
+        { title: "Mentor 1-on-1 hỗ trợ 24/7", desc: "Đội ngũ Tech Leads trực tiếp code review và giải đáp thắc mắc." },
+        { title: "Học thử miễn phí 7 ngày", desc: "Trải nghiệm phương pháp học chủ động không mất bất kỳ chi phí nào." },
+        { title: "Cam kết giới thiệu việc làm", desc: "Kết nối tuyển dụng tới 150+ doanh nghiệp công nghệ đối tác." },
+      ],
+      ctaText: "Đăng Ký Học Thử Miễn Phí 7 Ngày",
+    },
+    {
+      slug: "autoviet-motors",
+      name: "AutoViet Motors",
+      desc: "Landing Page Showroom Xe Điện & Ô Tô Thông Minh",
+      category: "Ô Tô / Xe Điện",
+      pageSpeed: "98/100",
+      badge: "🚗 SHOWROOM XE ĐIỆN THÔNG MINH 2026",
+      headline: "Trải Nghiệm Tương Lai Di Chuyển Xanh",
+      gradient: "from-blue-600 via-ocean-500 to-emerald-500",
+      detail: "Dòng xe điện thông minh quãng đường 550km / lần sạc. Tự hành Level 3 và hệ thống an toàn 5 sao ASEAN NCAP.",
+      stats: [
+        { value: "450+", label: "Đăng Ký Lái Thử Tận Nhà" },
+        { value: "0%", label: "Lãi Suất Trả Góp 12 Tháng" },
+        { value: "10 Năm", label: "Bảo Hành Pin Xe Điện" },
+      ],
+      features: [
+        { title: "Đăng ký lái thử tận nhà miễn phí", desc: "Xe được chở tới tận nhà bạn để lái thử trải nghiệm thực tế." },
+        { title: "Bảng màu xe 3D xoay 360 độ", desc: "Tự do lựa chọn màu sơn ngoại thất và chất liệu bọc ghế da." },
+        { title: "Tính toán mức trả góp linh hoạt", desc: "Trả trước chỉ từ 15% nhận xe ngay trong ngày." },
+        { title: "Tặng bộ sạc siêu tốc 22kW", desc: "Lắp đặt miễn phí trụ sạc tận nhà cùng gói bảo dưỡng 3 năm." },
+      ],
+      ctaText: "Đăng Ký Lái Thử Xe Tận Nhà",
+    },
+  ];
+
+  return projects.map((p) => ({
+    params: { slug: p.slug },
+    props: { project: p },
+  }));
+}
+
+const { project } = Astro.props;
+---
+
+<BaseLayout
+  title={`${project.name} — Demo Landing Page`}
+  description={project.detail}
+>
+  <!-- ===== HERO BANNERS ===== -->
+  <section class="section-padding relative overflow-hidden water-pattern" id="project-hero">
+    <div class="water-bubbles">
+      <div class="bubble"></div><div class="bubble"></div><div class="bubble"></div>
+      <div class="bubble"></div><div class="bubble"></div><div class="bubble"></div>
+    </div>
+    <div class="max-w-5xl mx-auto text-center relative z-10">
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-ocean-50 border border-ocean-200 text-ocean-700 text-xs font-bold mb-6 shadow-sm">
+        {project.badge}
+      </div>
+
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-ocean-950 mb-6 leading-tight">
+        {project.name} — <br />
+        <span class={`bg-gradient-to-r ${project.gradient} bg-clip-text text-transparent`}>
+          {project.headline}
+        </span>
+      </h1>
+
+      <p class="text-lg md:text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto mb-10">
+        {project.detail}
+      </p>
+
+      <div class="flex flex-wrap items-center justify-center gap-4">
+        <a href="#register" class="btn-primary">
+          {project.ctaText}
+        </a>
+        <a href="/#du-an" class="btn-secondary">
+          ← Quay Lại Portfolio
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LIVE STATS PERFORMANCE METRICS ===== -->
+  <section class="py-12 bg-white border-y border-ocean-100/60" id="project-stats">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {project.stats.map((s) => (
+          <div class="water-card p-6 text-center">
+            <div class="stat-number text-4xl lg:text-5xl font-extrabold text-ocean-600 mb-2" data-target={parseInt(s.value)} data-suffix={s.value.replace(/^[0-9]+/, '')}>{s.value}</div>
+            <p class="text-slate-600 text-sm font-semibold">{s.label}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CORE FEATURES ===== -->
+  <section class="section-padding gradient-section" id="project-features">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <span class="text-ocean-500 text-xs font-bold uppercase tracking-[0.2em]">TÍNH NĂNG NỔI BẬT</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold mt-3 mb-4 text-ocean-950">Giải pháp <span class="gradient-text">tối ưu chuyển đổi</span></h2>
+        <p class="text-slate-500 text-lg max-w-2xl mx-auto">Được thiết kế riêng để mang lại doanh thu đột phá cho doanh nghiệp.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        {project.features.map((f, i) => (
+          <div class="water-card p-8 flex items-start gap-5">
+            <div class="w-12 h-12 rounded-2xl bg-ocean-50 flex items-center justify-center font-extrabold text-ocean-600 shrink-0 text-lg shadow-sm border border-ocean-100">
+              0{i + 1}
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-ocean-950 mb-2">{f.title}</h3>
+              <p class="text-slate-600 text-sm leading-relaxed">{f.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONSULTATION FORM ===== -->
+  <section class="section-padding bg-white" id="register">
+    <div class="max-w-4xl mx-auto">
+      <div class="water-card p-8 md:p-12 shadow-2xl border-ocean-200">
+        <div class="text-center mb-10">
+          <span class="text-ocean-500 text-xs font-bold uppercase tracking-[0.2em]">TƯ VẤN THIẾT KẾ</span>
+          <h2 class="text-3xl font-extrabold text-ocean-950 mt-2 mb-3">Bạn muốn làm Landing Page tương tự {project.name}?</h2>
+          <p class="text-slate-500 text-sm">Điền thông tin bên dưới, đội ngũ kỹ sư BluVy sẽ liên hệ tư vấn miễn phí trong 30 phút.</p>
+        </div>
+        <ContactForm formId={`project-${project.slug}-form`} />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

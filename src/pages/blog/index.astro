@@ -1,0 +1,97 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const allPosts = await getCollection("blog", ({ data }) => !data.draft);
+const sortedPosts = allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<BaseLayout
+  title="Blog — Kiến Thức Website & SEO"
+  description="Blog chia sẻ kiến thức về thiết kế website, tối ưu SEO, tăng tốc PageSpeed, và marketing online cho doanh nghiệp nhỏ."
+>
+  <!-- ===== HERO ===== -->
+  <section class="section-padding relative overflow-hidden !pb-12 water-pattern" id="blog-hero">
+    <div class="max-w-4xl mx-auto text-center relative z-10">
+      <span class="text-ocean-500 text-sm font-semibold uppercase tracking-widest">Blog & Tin tức</span>
+      <h1 class="text-4xl md:text-5xl font-extrabold mt-3 mb-6 text-ocean-950">
+        Kiến thức <span class="gradient-text">hữu ích</span>
+      </h1>
+      <p class="text-lg md:text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
+        Chia sẻ kinh nghiệm, mẹo hay về thiết kế website, SEO, và marketing online.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== BLOG LIST ===== -->
+  <section class="section-padding !pt-8 bg-white" id="blog-list">
+    <div class="max-w-7xl mx-auto">
+      {sortedPosts.length === 0 ? (
+        <div class="text-center py-20">
+          <div class="w-20 h-20 mx-auto mb-6 rounded-2xl bg-ocean-50 flex items-center justify-center">
+            <svg class="w-10 h-10 text-ocean-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
+          </div>
+          <h2 class="text-2xl font-bold text-ocean-900 mb-2">Chưa có bài viết nào</h2>
+          <p class="text-slate-500">Chúng tôi đang chuẩn bị nội dung. Hãy quay lại sau nhé!</p>
+        </div>
+      ) : (
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {sortedPosts.map((post) => {
+            const coverImage = post.data.image || (post.data.thumbnail && post.data.thumbnail !== "/favicon.svg" ? post.data.thumbnail : null);
+            return (
+              <article class="water-card group flex flex-col justify-between">
+                <div>
+                  <!-- Thumbnail -->
+                  <a href={`/blog/${post.id}`} class="block overflow-hidden">
+                    <div class="aspect-video bg-gradient-to-br from-ocean-100 via-white to-aqua-100 flex items-center justify-center relative overflow-hidden">
+                      {coverImage ? (
+                        <img
+                          src={coverImage}
+                          alt={post.data.title}
+                          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                      ) : (
+                        <div class="text-center p-6">
+                          <div class="w-14 h-14 mx-auto mb-3 rounded-2xl bg-white/80 shadow-md flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <svg class="w-7 h-7 text-ocean-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  </a>
+
+                  <!-- Content -->
+                  <div class="p-6">
+                    <!-- Meta -->
+                    <div class="flex items-center gap-3 mb-3">
+                      <time datetime={post.data.pubDate.toISOString()} class="text-xs text-slate-400 font-medium">
+                        {post.data.pubDate.toLocaleDateString("vi-VN", { year: "numeric", month: "long", day: "numeric" })}
+                      </time>
+                    </div>
+
+                    <!-- Title -->
+                    <a href={`/blog/${post.id}`} class="block group-hover:text-ocean-600 transition-colors">
+                      <h2 class="text-lg font-bold text-ocean-900 mb-2 line-clamp-2">{post.data.title}</h2>
+                    </a>
+
+                    <!-- Description -->
+                    <p class="text-slate-500 text-sm leading-relaxed mb-4 line-clamp-3">{post.data.description}</p>
+                  </div>
+                </div>
+
+                <!-- Tags -->
+                <div class="px-6 pb-6 pt-0 flex gap-2 flex-wrap">
+                  {post.data.tags.map((tag: string) => (
+                    <span class="px-3 py-1 rounded-full bg-ocean-50 text-ocean-600 text-xs font-medium">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </article>
+            );
+          })}
+        </div>
+      )}
+    </div>
+  </section>
+</BaseLayout>

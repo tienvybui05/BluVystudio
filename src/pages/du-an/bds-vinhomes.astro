@@ -1,0 +1,133 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ContactForm from "../../components/ContactForm.astro";
+---
+
+<BaseLayout
+  title="Vinhomes Grand Horizon — Căn Hộ Hạng Sang Central Park"
+  description="Dự án căn hộ cao cấp tầm nhìn sông Panorama 360 độ. Ưu đãi chiết khấu 8% + Tặng gói nội thất 150 triệu."
+>
+  <!-- ===== DEMO PROJECT NAV HEADER ===== -->
+  <div class="bg-ocean-950 text-white py-2 px-4 text-xs flex justify-between items-center border-b border-ocean-800">
+    <div class="flex items-center gap-2">
+      <span class="px-2 py-0.5 rounded bg-emerald-500 text-white font-bold">DEMO LIVE</span>
+      <span class="text-ocean-200">Mẫu Landing Page Bất Động Sản Cao Cấp — Thiết kế bởi BluVy</span>
+    </div>
+    <a href="/#du-an" class="text-ocean-300 hover:text-white font-semibold underline flex items-center gap-1">
+      ← Quay về BluVy
+    </a>
+  </div>
+
+  <!-- ===== BRAND HERO ===== -->
+  <section class="section-padding relative overflow-hidden bg-gradient-to-br from-ocean-950 via-ocean-900 to-ocean-950 text-white" id="bds-hero">
+    <div class="water-bubbles opacity-40">
+      <div class="bubble"></div><div class="bubble"></div><div class="bubble"></div>
+      <div class="bubble"></div><div class="bubble"></div>
+    </div>
+    <div class="max-w-7xl mx-auto relative z-10">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-7">
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-ocean-200 text-xs font-bold mb-6">
+            🏢 DỰ ÁN BẤT ĐỘNG SẢN CENTRAL PARK 2026
+          </div>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight text-white">
+            Vinhomes Grand Horizon <br />
+            <span class="gradient-text">Tầm Nhìn Sông Panorama</span>
+          </h1>
+          <p class="text-lg md:text-xl text-ocean-100/90 leading-relaxed mb-8 max-w-2xl">
+            Sở hữu căn hộ hạng sang 3 mặt hướng sông Sài Gòn. Chiết khấu 8% cho 50 giao dịch đầu tiên + Tặng gói nội thất Ý 150 triệu.
+          </p>
+          <div class="flex flex-wrap gap-4 mb-10">
+            <a href="#booking" class="btn-primary">
+              Tải Báo Giá & Mặt Bằng 3D
+            </a>
+            <a href="tel:0988888888" class="btn-secondary !bg-white/10 !text-white !border-white/30 hover:!bg-white/20">
+              📞 Hotline 24/7: 0988.888.888
+            </a>
+          </div>
+          <div class="grid grid-cols-3 gap-4 border-t border-white/15 pt-6 text-xs text-ocean-200">
+            <div><span class="text-white font-bold text-base block">Sổ hồng</span>Lâu dài vĩnh viễn</div>
+            <div><span class="text-white font-bold text-base block">0% Lãi suất</span>Hỗ trợ 24 tháng</div>
+            <div><span class="text-white font-bold text-base block">Bàn giao</span>Quý IV / 2026</div>
+          </div>
+        </div>
+        <div class="lg:col-span-5">
+          <div class="water-card p-8 bg-white/95 backdrop-blur-xl text-slate-800 shadow-2xl border-white">
+            <h3 class="text-2xl font-extrabold text-ocean-950 mb-2 text-center">Đăng Ký Tham Quan Căn Hộ Mẫu</h3>
+            <p class="text-slate-500 text-xs text-center mb-6">Xe Mercedes đón tận nhà miễn phí</p>
+            <ContactForm formId="bds-hero-form" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SPECS & ADVANTAGES ===== -->
+  <section class="section-padding bg-white" id="tien-ich">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <span class="text-ocean-500 text-xs font-bold uppercase tracking-[0.2em]">ĐẲNG CẤP THƯỢNG LƯU</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-ocean-950 mt-2 mb-4">5 Tiện Ích Độc Quyền <span class="gradient-text">5 Sao</span></h2>
+        <p class="text-slate-500 text-base max-w-2xl mx-auto">Tận hưởng cuộc sống nghỉ dưỡng ngập tràn không gian xanh ngay trung tâm đô thị.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        {[
+          { title: "Bến Du Thuyền 6 Sao", desc: "Bến du thuyền tư nhân liền kề công viên ven sông 14 hecta.", icon: "🛥️" },
+          { title: "Hồ Bơi Vô Cực Trên Không", desc: "Hồ bơi nước mặn tràn bờ tầng 40 tầm nhìn ôm trọn thành phố.", icon: "🏊" },
+          { title: "Trung Tâm Thương Mại Vincom", desc: "Hội tụ 300+ thương hiệu thời trang & ẩm thực cao cấp thế giới.", icon: "🛍️" },
+          { title: "Trường Học Vinschool", desc: "Hệ thống giáo dục liên cấp quốc tế chuẩn Cambridge.", icon: "🎓" },
+          { title: "Bệnh Viện Vinmec", desc: "Bệnh viện đa khoa quốc tế trang thiết bị y tế tân tiến.", icon: "🏥" },
+          { title: "Công Viên Biển Nhân Tạo", desc: "Bãi cát trắng mịn cùng làn nước xanh mát rợp bóng dừa.", icon: "🌴" },
+        ].map((item) => (
+          <div class="water-card p-8 group">
+            <div class="text-4xl mb-4 group-hover:scale-125 transition-transform">{item.icon}</div>
+            <h3 class="text-xl font-bold text-ocean-950 mb-2">{item.title}</h3>
+            <p class="text-slate-500 text-sm leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== APARTMENT TYPES ===== -->
+  <section class="section-padding gradient-section" id="mat-bang">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <span class="text-ocean-500 text-xs font-bold uppercase tracking-[0.2em]">MẶT BẰNG DỰ ÁN</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-ocean-950 mt-2 mb-4">Loại Hình Căn Hộ <span class="gradient-text">Đa Dạng</span></h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        {[
+          { name: "Căn Hộ 1 Phòng Ngủ", area: "52m² - 56m²", price: "2.8 Tỷ", highlight: "Phù hợp đầu tư cho thuê", bg: "bg-ocean-50 border-ocean-200" },
+          { name: "Căn Hộ 2 Phòng Ngủ", area: "75m² - 82m²", price: "4.2 Tỷ", highlight: "Lựa chọn tốt nhất gia đình trẻ", bg: "bg-aqua-50 border-aqua-200" },
+          { name: "Penthouse Horizon VIP", area: "180m² - 240m²", price: "12.5 Tỷ", highlight: "Sân vườn & Săn mây tầng 45", bg: "bg-blue-50 border-blue-200" },
+        ].map((plan) => (
+          <div class={`water-card p-8 border-2 ${plan.bg} flex flex-col justify-between`}>
+            <div>
+              <span class="px-3 py-1 rounded-full bg-ocean-500 text-white text-xs font-bold mb-4 inline-block">{plan.highlight}</span>
+              <h3 class="text-2xl font-extrabold text-ocean-950 mb-2">{plan.name}</h3>
+              <p class="text-slate-500 text-sm mb-4">Diện tích thông thủy: <strong>{plan.area}</strong></p>
+              <div class="text-3xl font-extrabold text-ocean-600 mb-6">Từ {plan.price}</div>
+            </div>
+            <a href="#booking" class="btn-primary w-full justify-center">Tải Mặt Bằng Chi Tiết 3D</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BOOKING FORM ===== -->
+  <section class="section-padding bg-white" id="booking">
+    <div class="max-w-4xl mx-auto">
+      <div class="water-card p-10 shadow-2xl border-ocean-300 bg-gradient-to-br from-white via-ocean-50/40 to-white">
+        <div class="text-center mb-8">
+          <h2 class="text-3xl font-extrabold text-ocean-950 mb-2">Nhận Bảng Giá Chi Tiết & Ưu Đãi 8%</h2>
+          <p class="text-slate-500 text-sm">Chỉ áp dụng cho 50 suất đăng ký tư vấn trực tiếp hôm nay.</p>
+        </div>
+        <ContactForm formId="bds-booking-form" />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

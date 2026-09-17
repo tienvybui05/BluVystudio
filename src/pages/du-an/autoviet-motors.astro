@@ -1,0 +1,97 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ContactForm from "../../components/ContactForm.astro";
+---
+
+<BaseLayout
+  title="AutoViet Motors — Showroom Xe Điện & Ô Tô Thông Minh 2026"
+  description="Dòng xe điện thông minh di chuyển 550km / lần sạc. Tự hành Level 3, an toàn 5 sao ASEAN NCAP. Đăng ký lái thử tận nhà miễn phí."
+>
+  <!-- ===== DEMO PROJECT NAV HEADER ===== -->
+  <div class="bg-blue-950 text-white py-2 px-4 text-xs flex justify-between items-center border-b border-blue-800">
+    <div class="flex items-center gap-2">
+      <span class="px-2 py-0.5 rounded bg-blue-500 text-white font-bold">DEMO LIVE</span>
+      <span class="text-blue-200">Mẫu Landing Page Showroom Xe Điện — Thiết kế bởi BluVy</span>
+    </div>
+    <a href="/#du-an" class="text-blue-300 hover:text-white font-semibold underline flex items-center gap-1">
+      ← Quay về BluVy
+    </a>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <section class="section-padding relative overflow-hidden bg-gradient-to-br from-blue-950 via-slate-900 to-blue-950 text-white" id="autoviet-hero">
+    <div class="max-w-7xl mx-auto relative z-10">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-7">
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-blue-200 text-xs font-bold mb-6">
+            🚗 THẾ HỆ XE ĐIỆN THÔNG MINH 2026
+          </div>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight text-white">
+            AutoViet Motors EV <br />
+            <span class="bg-gradient-to-r from-blue-400 via-cyan-300 to-emerald-300 bg-clip-text text-transparent">Kỷ Nguyên Di Chuyển Xanh</span>
+          </h1>
+          <p class="text-lg md:text-xl text-blue-100/90 leading-relaxed mb-8 max-w-2xl">
+            Quãng đường 550km sau 1 lần sạc nhanh 20 phút. Trợ lý ảo AI điều khiển giọng nói tiếng Việt và tự động đỗ xe thông minh.
+          </p>
+          <div class="flex flex-wrap gap-4 mb-8">
+            <a href="#testdrive" class="btn-primary !bg-blue-500 hover:!bg-blue-600">
+              🏎️ Đăng Ký Lái Thử Tận Nhà Miễn Phí
+            </a>
+            <a href="#models" class="btn-secondary !bg-white/10 !text-white !border-white/30 hover:!bg-white/20">
+              ⚡ Xem Bảng Giá & Ưu Đãi 0% Lãi Suất
+            </a>
+          </div>
+        </div>
+        <div class="lg:col-span-5">
+          <div class="water-card p-8 bg-white text-slate-800 shadow-2xl rounded-3xl">
+            <h3 class="text-2xl font-extrabold text-blue-950 mb-2 text-center">Đăng Ký Lái Thử Tận Nhà</h3>
+            <p class="text-slate-500 text-xs text-center mb-6">Xe được chuyên viên chở tới tận nhà bạn</p>
+            <ContactForm formId="autoviet-testdrive-form" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MODELS ===== -->
+  <section class="section-padding bg-white" id="models">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <span class="text-blue-600 text-xs font-bold uppercase tracking-[0.2em]">CÁC DÒNG XE HOT</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mt-2 mb-4">Bảng Giá Xe Điện <span class="text-blue-600">AutoViet 2026</span></h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        {[
+          { name: "AutoViet EV-5 (SUV 5 Chỗ)", desc: "Quãng đường 450km — Trợ lý AI tiếng Việt — 6 Túi khí", price: "690.000.000đ", gift: "Tặng Trụ sạc 7kW tại nhà", icon: "🚙" },
+          { name: "AutoViet EV-7 (SUV 7 Chỗ VIP)", desc: "Quãng đường 550km — Lái tự hành Level 3 — Ghế Massage", price: "990.000.000đ", gift: "Tặng Trụ sạc siêu tốc 22kW", icon: "🚘" },
+          { name: "AutoViet Roadster Sport", desc: "Tăng tốc 0-100km/h trong 3.2s — Pin Solid State 700km", price: "1.490.000.000đ", gift: "Miễn phí sạc pin 3 năm", icon: "🏎️" },
+        ].map((m) => (
+          <div class="water-card p-8 text-center border-blue-100 hover:border-blue-300 flex flex-col justify-between">
+            <div>
+              <span class="px-3 py-1 rounded-full bg-blue-500 text-white text-xs font-bold mb-4 inline-block">{m.gift}</span>
+              <div class="text-5xl mb-4">{m.icon}</div>
+              <h3 class="text-xl font-bold text-slate-900 mb-2">{m.name}</h3>
+              <p class="text-slate-500 text-sm mb-4 leading-relaxed">{m.desc}</p>
+              <div class="text-2xl font-extrabold text-blue-600 mb-6">Từ {m.price}</div>
+            </div>
+            <a href="#testdrive" class="btn-primary w-full justify-center !bg-blue-500 hover:!bg-blue-600">Đăng Ký Nhận Báo Giá Trả Góp</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FORM ===== -->
+  <section class="section-padding bg-blue-50/50" id="testdrive">
+    <div class="max-w-3xl mx-auto">
+      <div class="water-card p-10 bg-white border-blue-200 shadow-2xl">
+        <div class="text-center mb-8">
+          <h2 class="text-3xl font-extrabold text-slate-900 mb-2">Đăng Ký Nhận Tư Vấn Trả Góp 0%</h2>
+          <p class="text-slate-500 text-sm">Chỉ cần trả trước 15% nhận xe ngay — Hỗ trợ thủ tục biển số nhanh trong 24h.</p>
+        </div>
+        <ContactForm formId="autoviet-form-footer" />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

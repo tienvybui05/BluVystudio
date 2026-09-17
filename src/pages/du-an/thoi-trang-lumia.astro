@@ -1,0 +1,107 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ContactForm from "../../components/ContactForm.astro";
+---
+
+<BaseLayout
+  title="Lumia Organic Beauty — Skincare Thuần Chay 100% Organic"
+  description="Bộ sản phẩm dưỡng da thảo mộc hữu cơ thiên nhiên. Giúp mờ thâm nám, cấp ẩm 24h và chống lão hóa vượt trội. Mua 1 Tặng 1."
+>
+  <!-- ===== DEMO PROJECT NAV HEADER ===== -->
+  <div class="bg-rose-950 text-white py-2 px-4 text-xs flex justify-between items-center border-b border-rose-800">
+    <div class="flex items-center gap-2">
+      <span class="px-2 py-0.5 rounded bg-rose-500 text-white font-bold">DEMO LIVE</span>
+      <span class="text-rose-200">Mẫu Landing Page Mỹ Phẩm Organic — Thiết kế bởi BluVy</span>
+    </div>
+    <a href="/#du-an" class="text-rose-300 hover:text-white font-semibold underline flex items-center gap-1">
+      ← Quay về BluVy
+    </a>
+  </div>
+
+  <!-- ===== BRAND HERO ===== -->
+  <section class="section-padding relative overflow-hidden bg-gradient-to-br from-rose-50 via-pink-50/60 to-white" id="lumia-hero">
+    <div class="max-w-7xl mx-auto relative z-10">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-7">
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-rose-100/80 text-rose-800 text-xs font-bold mb-6 border border-rose-200">
+            🌿 THUẦN CHAY 100% — CHỨNG NHẬN KBY ORGANIC
+          </div>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight text-slate-900">
+            Lumia Beauty <br />
+            <span class="bg-gradient-to-r from-rose-600 via-pink-500 to-rose-400 bg-clip-text text-transparent">Tái Tạo Làn Da Trắng Sáng</span>
+          </h1>
+          <p class="text-lg md:text-xl text-slate-600 leading-relaxed mb-8 max-w-2xl">
+            Sự kết hợp hoàn hảo giữa hoa hồng Damask và tinh chất BHA thực vật. Giúp da căng bóng, mờ thâm nám chỉ sau 14 ngày sử dụng.
+          </p>
+          <div class="flex flex-wrap items-center gap-4 mb-8">
+            <a href="#combo" class="btn-primary !bg-gradient-to-r !from-rose-500 !to-pink-500 hover:!from-rose-600 hover:!to-pink-600 shadow-rose-300/40">
+              🎁 Mua 1 Tặng 1 Ngay Hôm Nay
+            </a>
+            <a href="#ingredients" class="btn-secondary !border-rose-200 !text-rose-700 hover:!bg-rose-50">
+              Khám Phá Thành Phần
+            </a>
+          </div>
+          <div class="flex items-center gap-6 text-sm text-slate-500 font-medium">
+            <span class="flex items-center gap-1.5"><span class="text-rose-500">✔</span> Không cồn, không paraben</span>
+            <span class="flex items-center gap-1.5"><span class="text-rose-500">✔</span> Thử nghiệm lâm sàng 100%</span>
+          </div>
+        </div>
+        <div class="lg:col-span-5">
+          <div class="water-card p-8 bg-white/95 backdrop-blur-xl text-slate-800 shadow-2xl border-rose-100 text-center">
+            <div class="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-tr from-rose-100 to-pink-200 flex items-center justify-center text-6xl shadow-inner">
+              🌸
+            </div>
+            <h3 class="text-2xl font-extrabold text-slate-900 mb-1">Serum Lumia Rose Gold</h3>
+            <p class="text-rose-600 font-bold text-sm mb-4">Giá gốc: <span class="line-through text-slate-400">850.000đ</span> ➔ <strong class="text-2xl text-rose-600">450.000đ</strong></p>
+            <p class="text-xs text-slate-500 mb-6">Tặng 1 Tinh chất rửa mặt Organic 150ml + Free Ship toàn quốc</p>
+            <a href="#order" class="btn-primary w-full justify-center !bg-rose-500 hover:!bg-rose-600">Đặt Mua Hàng Hỏa Tốc</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRODUCT COMBOS ===== -->
+  <section class="section-padding bg-white" id="combo">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <span class="text-rose-500 text-xs font-bold uppercase tracking-[0.2em]">ƯU ĐÃI ĐẶC BIỆT</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mt-2 mb-4">Các Gói Skincare <span class="text-rose-600">Khuyên Dùng</span></h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        {[
+          { name: "Combo Da Căng Bóng", desc: "Serum Rose Gold + Toner Cấp Ẩm", price: "590.000đ", oldPrice: "1.100.000đ", gift: "Tặng 1 Mặt nạ đất sét Organic", bg: "bg-rose-50/50 border-rose-100" },
+          { name: "Combo Dưỡng Trắng Sáng", desc: "Kem Dưỡng Đêm + Serum BHA 2%", price: "790.000đ", oldPrice: "1.450.000đ", gift: "Tặng 1 Cọ rửa mặt Silicone 3D", bg: "bg-pink-50/50 border-pink-100" },
+          { name: "Bộ Skincare Toàn Diện 5 Món", desc: "Trọn bộ phục hồi da chuyên sâu", price: "1.290.000đ", oldPrice: "2.500.000đ", gift: "Tặng 1 Máy di tinh chất ion nóng lạnh", bg: "bg-purple-50/50 border-purple-100" },
+        ].map((item) => (
+          <div class={`water-card p-8 border-2 ${item.bg} flex flex-col justify-between`}>
+            <div>
+              <span class="px-3 py-1 rounded-full bg-rose-500 text-white text-xs font-bold mb-4 inline-block">{item.gift}</span>
+              <h3 class="text-2xl font-extrabold text-slate-900 mb-2">{item.name}</h3>
+              <p class="text-slate-500 text-sm mb-6">{item.desc}</p>
+              <div class="mb-6">
+                <span class="text-slate-400 line-through text-sm mr-2">{item.oldPrice}</span>
+                <span class="text-3xl font-extrabold text-rose-600">{item.price}</span>
+              </div>
+            </div>
+            <a href="#order" class="btn-primary w-full justify-center !bg-rose-500 hover:!bg-rose-600">Đặt Hàng Mua 1 Tặng 1</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ORDER FORM ===== -->
+  <section class="section-padding bg-rose-50/40" id="order">
+    <div class="max-w-3xl mx-auto">
+      <div class="water-card p-10 bg-white border-rose-200 shadow-2xl">
+        <div class="text-center mb-8">
+          <h2 class="text-3xl font-extrabold text-slate-900 mb-2">Đăng Ký Đặt Hàng Nhận Ưu Đãi 50%</h2>
+          <p class="text-slate-500 text-sm">Miễn phí giao hàng hỏa tốc toàn quốc — Kiểm tra hàng trước khi thanh toán.</p>
+        </div>
+        <ContactForm formId="lumia-order-form" />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

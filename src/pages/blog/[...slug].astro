@@ -1,0 +1,99 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog", ({ data }) => !data.draft);
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+const formattedDate = post.data.pubDate.toLocaleDateString("vi-VN", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+---
+
+<BaseLayout
+  title={post.data.title}
+  description={post.data.description}
+  ogImage={post.data.image || post.data.thumbnail}
+>
+  <article class="section-padding bg-white" id="blog-post">
+    <div class="max-w-3xl mx-auto">
+      <!-- Back link -->
+      <a href="/blog" class="inline-flex items-center gap-2 text-slate-500 hover:text-ocean-600 transition-colors mb-8 text-sm group font-medium">
+        <svg class="w-4 h-4 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18"/></svg>
+        Quay lại Blog
+      </a>
+
+      <!-- Header -->
+      <header class="mb-10">
+        <!-- Tags -->
+        <div class="flex gap-2 flex-wrap mb-4">
+          {post.data.tags.map((tag: string) => (
+            <span class="px-3 py-1 rounded-full bg-ocean-50 text-ocean-600 text-xs font-semibold">
+              {tag}
+            </span>
+          ))}
+        </div>
+
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-ocean-950 leading-tight mb-6">
+          {post.data.title}
+        </h1>
+
+        <p class="text-lg md:text-xl text-slate-600 leading-relaxed mb-6">{post.data.description}</p>
+
+        <!-- Meta -->
+        <div class="flex items-center gap-4 pb-6">
+          <div class="w-10 h-10 shrink-0">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+              <defs><linearGradient id="blog-b-grad" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#00D4FF"/><stop offset="100%" stop-color="#0066FF"/></linearGradient></defs>
+              <rect width="40" height="40" rx="12" fill="url(#blog-b-grad)"/>
+              <path d="M12 10h10c3.5 0 6 2 6 5.5 0 1.5-.6 2.8-1.6 3.7C28.3 20.3 29 22 29 24c0 3.5-2.5 6-7 6H12V10z" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M12 20h9" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div>
+            <p class="text-ocean-900 font-bold text-sm">BluVy</p>
+            <time datetime={post.data.pubDate.toISOString()} class="text-slate-400 text-xs">{formattedDate}</time>
+          </div>
+        </div>
+        <div class="h-[1px] bg-gradient-to-r from-transparent via-ocean-200/60 to-transparent mb-8"></div>
+
+        {(() => {
+          const coverImage = post.data.image || (post.data.thumbnail && post.data.thumbnail !== "/favicon.svg" ? post.data.thumbnail : null);
+          return coverImage ? (
+            <div class="aspect-video w-full rounded-2xl overflow-hidden mb-10 shadow-lg border border-ocean-100">
+              <img src={coverImage} alt={post.data.title} class="w-full h-full object-cover" />
+            </div>
+          ) : null;
+        })()}
+      </header>
+
+      <!-- Content -->
+      <div class="prose prose-lg max-w-none prose-headings:text-ocean-950 prose-a:text-ocean-600 prose-strong:text-ocean-900 text-slate-700">
+        <Content />
+      </div>
+
+      <!-- Footer CTA -->
+      <div class="mt-16 pt-4 relative">
+        <div class="h-[1px] bg-gradient-to-r from-transparent via-ocean-200/60 to-transparent mb-8"></div>
+        <div class="water-card p-8 text-center bg-gradient-to-br from-ocean-50/50 via-white to-aqua-50/50">
+          <h3 class="text-2xl font-bold text-ocean-950 mb-3">Cần hỗ trợ thiết kế website?</h3>
+          <p class="text-slate-600 mb-6 text-sm">Liên hệ BluVy để được tư vấn miễn phí và nhận báo giá trong 24h.</p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/lien-he" class="btn-primary">Liên hệ ngay</a>
+            <a href="/bang-gia" class="btn-secondary">Xem bảng giá</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+</BaseLayout>
