@@ -8,82 +8,115 @@ import ContactForm from "../../components/ContactForm.astro";
   description="Dự án căn hộ cao cấp tầm nhìn sông Panorama 360 độ. Ưu đãi chiết khấu 8% + Tặng gói nội thất 150 triệu."
 >
   <!-- ===== DEMO PROJECT NAV HEADER ===== -->
-  <div class="bg-ocean-950 text-white py-2 px-4 text-xs flex justify-between items-center border-b border-ocean-800">
+  <div class="bg-slate-900 text-white py-2 px-4 text-xs flex justify-between items-center border-b border-slate-800">
     <div class="flex items-center gap-2">
-      <span class="px-2 py-0.5 rounded bg-emerald-500 text-white font-bold">DEMO LIVE</span>
-      <span class="text-ocean-200">Mẫu Landing Page Bất Động Sản Cao Cấp — Thiết kế bởi BluVy</span>
+      <span class="px-2 py-0.5 rounded bg-emerald-500 text-white font-bold tracking-wide">DEMO LIVE</span>
+      <span class="text-slate-300 hidden sm:inline">Mẫu Landing Page Bất Động Sản Cao Cấp — Thiết kế bởi BluVy</span>
+      <span class="text-slate-300 sm:hidden">Landing Page Bất Động Sản</span>
     </div>
-    <a href="/#du-an" class="text-ocean-300 hover:text-white font-semibold underline flex items-center gap-1">
-      ← Quay về BluVy
+    <a href="/#du-an" class="text-slate-300 hover:text-white font-semibold underline flex items-center gap-1 transition-colors">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+      Quay về BluVy
     </a>
   </div>
 
   <!-- ===== BRAND HERO ===== -->
-  <section class="section-padding relative overflow-hidden bg-gradient-to-br from-ocean-950 via-ocean-900 to-ocean-950 text-white" id="bds-hero">
-    <div class="water-bubbles opacity-40">
-      <div class="bubble"></div><div class="bubble"></div><div class="bubble"></div>
-      <div class="bubble"></div><div class="bubble"></div>
+  <section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-slate-950 text-white" id="bds-hero">
+    <!-- Background Image with Overlay -->
+    <div class="absolute inset-0 z-0">
+      <img src="https://images.unsplash.com/photo-1600607687988-cece530adf1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Vinhomes Grand Horizon Panorama" class="w-full h-full object-cover opacity-60 mix-blend-overlay" />
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/80 to-slate-950/40"></div>
     </div>
-    <div class="max-w-7xl mx-auto relative z-10">
-      <div class="grid lg:grid-cols-12 gap-12 items-center">
-        <div class="lg:col-span-7">
-          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-ocean-200 text-xs font-bold mb-6">
-            🏢 DỰ ÁN BẤT ĐỘNG SẢN CENTRAL PARK 2026
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-20">
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        <!-- Hero Content -->
+        <div class="lg:col-span-7 animate-[fadeInUp_1s_ease-out_forwards]">
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-slate-200 text-xs font-bold tracking-[0.15em] uppercase mb-6 shadow-lg">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            Dự án biểu tượng 2026
           </div>
-          <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight text-white">
-            Vinhomes Grand Horizon <br />
-            <span class="gradient-text">Tầm Nhìn Sông Panorama</span>
+          <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-[1.1] text-white tracking-tight">
+            Tầm Nhìn Sông <br />
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-yellow-400 to-yellow-600">Panorama Tuyệt Mỹ</span>
           </h1>
-          <p class="text-lg md:text-xl text-ocean-100/90 leading-relaxed mb-8 max-w-2xl">
-            Sở hữu căn hộ hạng sang 3 mặt hướng sông Sài Gòn. Chiết khấu 8% cho 50 giao dịch đầu tiên + Tặng gói nội thất Ý 150 triệu.
+          <p class="text-lg sm:text-xl text-slate-300 leading-relaxed mb-8 max-w-2xl font-light">
+            Sở hữu căn hộ hạng sang 3 mặt hướng sông Sài Gòn. Ưu đãi chiết khấu 8% cho 50 giao dịch đầu tiên + Tặng gói nội thất Ý 150 triệu.
           </p>
-          <div class="flex flex-wrap gap-4 mb-10">
-            <a href="#booking" class="btn-primary">
-              Tải Báo Giá & Mặt Bằng 3D
+          <div class="flex flex-col sm:flex-row gap-4 mb-12">
+            <a href="#booking" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-yellow-500 to-yellow-600 text-slate-950 font-bold rounded-xl hover:scale-105 hover:shadow-[0_10px_40px_-10px_rgba(234,179,8,0.5)] transition-all duration-300">
+              Nhận Bảng Giá & Ưu Đãi
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
             </a>
-            <a href="tel:0988888888" class="btn-secondary !bg-white/10 !text-white !border-white/30 hover:!bg-white/20">
-              📞 Hotline 24/7: 0988.888.888
+            <a href="tel:0988888888" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold rounded-xl hover:bg-white/20 transition-all duration-300">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              Hotline: 0988.888.888
             </a>
           </div>
-          <div class="grid grid-cols-3 gap-4 border-t border-white/15 pt-6 text-xs text-ocean-200">
-            <div><span class="text-white font-bold text-base block">Sổ hồng</span>Lâu dài vĩnh viễn</div>
-            <div><span class="text-white font-bold text-base block">0% Lãi suất</span>Hỗ trợ 24 tháng</div>
-            <div><span class="text-white font-bold text-base block">Bàn giao</span>Quý IV / 2026</div>
+
+          <!-- Key Metrics -->
+          <div class="grid grid-cols-3 gap-6 pt-8 border-t border-white/10">
+            <div>
+              <div class="text-3xl font-extrabold text-white mb-1">100%</div>
+              <div class="text-sm text-slate-400">Sổ hồng lâu dài</div>
+            </div>
+            <div>
+              <div class="text-3xl font-extrabold text-white mb-1">0%</div>
+              <div class="text-sm text-slate-400">Lãi suất 24 tháng</div>
+            </div>
+            <div>
+              <div class="text-3xl font-extrabold text-white mb-1">2026</div>
+              <div class="text-sm text-slate-400">Dự kiến bàn giao</div>
+            </div>
           </div>
         </div>
-        <div class="lg:col-span-5">
-          <div class="water-card p-8 bg-white/95 backdrop-blur-xl text-slate-800 shadow-2xl border-white">
-            <h3 class="text-2xl font-extrabold text-ocean-950 mb-2 text-center">Đăng Ký Tham Quan Căn Hộ Mẫu</h3>
-            <p class="text-slate-500 text-xs text-center mb-6">Xe Mercedes đón tận nhà miễn phí</p>
-            <ContactForm formId="bds-hero-form" />
+
+        <!-- Hero Form Card -->
+        <div class="lg:col-span-5 w-full max-w-md mx-auto lg:ml-auto animate-[fadeInUp_1s_ease-out_0.3s_forwards] opacity-0">
+          <div class="bg-white/10 backdrop-blur-2xl border border-white/20 p-8 rounded-3xl shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)]">
+            <div class="text-center mb-6">
+              <h3 class="text-2xl font-bold text-white mb-2">Tham Quan Nhà Mẫu</h3>
+              <p class="text-slate-300 text-sm">Đăng ký ngay để trải nghiệm không gian sống thượng lưu.</p>
+            </div>
+            <!-- Customize form container to fit dark theme -->
+            <div class="dark-form-wrapper">
+              <ContactForm formId="bds-hero-form" />
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== SPECS & ADVANTAGES ===== -->
-  <section class="section-padding bg-white" id="tien-ich">
-    <div class="max-w-7xl mx-auto">
-      <div class="text-center mb-16">
-        <span class="text-ocean-500 text-xs font-bold uppercase tracking-[0.2em]">ĐẲNG CẤP THƯỢNG LƯU</span>
-        <h2 class="text-3xl md:text-4xl font-extrabold text-ocean-950 mt-2 mb-4">5 Tiện Ích Độc Quyền <span class="gradient-text">5 Sao</span></h2>
-        <p class="text-slate-500 text-base max-w-2xl mx-auto">Tận hưởng cuộc sống nghỉ dưỡng ngập tràn không gian xanh ngay trung tâm đô thị.</p>
+  <!-- ===== AMENITIES ===== -->
+  <section class="py-24 bg-slate-50 relative" id="tien-ich">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 max-w-3xl mx-auto">
+        <span class="text-yellow-600 text-sm font-bold uppercase tracking-[0.2em] mb-3 block">Đẳng cấp thượng lưu</span>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight">Hệ Sinh Thái Tiện Ích <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-yellow-400">Độc Quyền</span></h2>
+        <p class="text-lg text-slate-600 leading-relaxed">Tận hưởng đặc quyền nghỉ dưỡng mỗi ngày với chuỗi tiện ích 5 sao chuẩn quốc tế ngay thềm nhà.</p>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-8">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {[
-          { title: "Bến Du Thuyền 6 Sao", desc: "Bến du thuyền tư nhân liền kề công viên ven sông 14 hecta.", icon: "🛥️" },
-          { title: "Hồ Bơi Vô Cực Trên Không", desc: "Hồ bơi nước mặn tràn bờ tầng 40 tầm nhìn ôm trọn thành phố.", icon: "🏊" },
-          { title: "Trung Tâm Thương Mại Vincom", desc: "Hội tụ 300+ thương hiệu thời trang & ẩm thực cao cấp thế giới.", icon: "🛍️" },
-          { title: "Trường Học Vinschool", desc: "Hệ thống giáo dục liên cấp quốc tế chuẩn Cambridge.", icon: "🎓" },
-          { title: "Bệnh Viện Vinmec", desc: "Bệnh viện đa khoa quốc tế trang thiết bị y tế tân tiến.", icon: "🏥" },
-          { title: "Công Viên Biển Nhân Tạo", desc: "Bãi cát trắng mịn cùng làn nước xanh mát rợp bóng dừa.", icon: "🌴" },
+          { title: "Bến Du Thuyền 6 Sao", desc: "Bến du thuyền tư nhân liền kề công viên ven sông 14 hecta.", icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />`, img: "https://images.unsplash.com/photo-1559496081-30cbdd1408b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
+          { title: "Hồ Bơi Vô Cực Trên Không", desc: "Hồ bơi nước mặn tràn bờ tầng 40 tầm nhìn ôm trọn thành phố.", icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 10a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1v-4z" />`, img: "https://images.unsplash.com/photo-1576013551627-11971f36e429?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
+          { title: "Trung Tâm Thương Mại", desc: "Hội tụ 300+ thương hiệu thời trang & ẩm thực cao cấp thế giới.", icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />`, img: "https://images.unsplash.com/photo-1519999482648-25049ddd37b1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
         ].map((item) => (
-          <div class="water-card p-8 group">
-            <div class="text-4xl mb-4 group-hover:scale-125 transition-transform">{item.icon}</div>
-            <h3 class="text-xl font-bold text-ocean-950 mb-2">{item.title}</h3>
-            <p class="text-slate-500 text-sm leading-relaxed">{item.desc}</p>
+          <div class="group rounded-2xl bg-white border border-slate-200 overflow-hidden hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] transition-all duration-500">
+            <div class="h-48 overflow-hidden relative">
+              <div class="absolute inset-0 bg-slate-900/20 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+              <img src={item.img} alt={item.title} class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+            </div>
+            <div class="p-8">
+              <div class="w-12 h-12 rounded-xl bg-yellow-50 text-yellow-600 flex items-center justify-center mb-6">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <Fragment set:html={item.icon} />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-yellow-600 transition-colors">{item.title}</h3>
+              <p class="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
+            </div>
           </div>
         ))}
       </div>
@@ -91,27 +124,46 @@ import ContactForm from "../../components/ContactForm.astro";
   </section>
 
   <!-- ===== APARTMENT TYPES ===== -->
-  <section class="section-padding gradient-section" id="mat-bang">
-    <div class="max-w-7xl mx-auto">
-      <div class="text-center mb-16">
-        <span class="text-ocean-500 text-xs font-bold uppercase tracking-[0.2em]">MẶT BẰNG DỰ ÁN</span>
-        <h2 class="text-3xl md:text-4xl font-extrabold text-ocean-950 mt-2 mb-4">Loại Hình Căn Hộ <span class="gradient-text">Đa Dạng</span></h2>
+  <section class="py-24 bg-white" id="mat-bang">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+        <div class="max-w-2xl">
+          <span class="text-yellow-600 text-sm font-bold uppercase tracking-[0.2em] mb-3 block">Mặt Bằng Thiết Kế</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Tinh Hoa Kiến Trúc Đương Đại</h2>
+        </div>
+        <a href="#booking" class="inline-flex items-center gap-2 text-yellow-600 font-bold hover:text-yellow-700 transition-colors">
+          Xem Toàn Bộ Mặt Bằng
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-8">
+      <div class="grid lg:grid-cols-3 gap-8">
         {[
-          { name: "Căn Hộ 1 Phòng Ngủ", area: "52m² - 56m²", price: "2.8 Tỷ", highlight: "Phù hợp đầu tư cho thuê", bg: "bg-ocean-50 border-ocean-200" },
-          { name: "Căn Hộ 2 Phòng Ngủ", area: "75m² - 82m²", price: "4.2 Tỷ", highlight: "Lựa chọn tốt nhất gia đình trẻ", bg: "bg-aqua-50 border-aqua-200" },
-          { name: "Penthouse Horizon VIP", area: "180m² - 240m²", price: "12.5 Tỷ", highlight: "Sân vườn & Săn mây tầng 45", bg: "bg-blue-50 border-blue-200" },
+          { name: "Căn Hộ 1 Phòng Ngủ", area: "52m² - 56m²", price: "2.8 Tỷ", highlight: "Đầu tư cho thuê lý tưởng", img: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
+          { name: "Căn Hộ 2 Phòng Ngủ", area: "75m² - 82m²", price: "4.2 Tỷ", highlight: "Không gian sống gia đình", img: "https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
+          { name: "Penthouse Horizon", area: "180m² - 240m²", price: "12.5 Tỷ", highlight: "Đỉnh cao giới thượng lưu", img: "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
         ].map((plan) => (
-          <div class={`water-card p-8 border-2 ${plan.bg} flex flex-col justify-between`}>
-            <div>
-              <span class="px-3 py-1 rounded-full bg-ocean-500 text-white text-xs font-bold mb-4 inline-block">{plan.highlight}</span>
-              <h3 class="text-2xl font-extrabold text-ocean-950 mb-2">{plan.name}</h3>
-              <p class="text-slate-500 text-sm mb-4">Diện tích thông thủy: <strong>{plan.area}</strong></p>
-              <div class="text-3xl font-extrabold text-ocean-600 mb-6">Từ {plan.price}</div>
+          <div class="group flex flex-col bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 hover:shadow-2xl transition-all duration-300">
+            <div class="relative h-56 overflow-hidden">
+              <div class="absolute top-4 left-4 z-10 px-3 py-1 rounded-full bg-slate-900/80 backdrop-blur text-white text-xs font-bold tracking-wide">
+                {plan.highlight}
+              </div>
+              <img src={plan.img} alt={plan.name} class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
             </div>
-            <a href="#booking" class="btn-primary w-full justify-center">Tải Mặt Bằng Chi Tiết 3D</a>
+            <div class="p-8 flex flex-col flex-grow">
+              <h3 class="text-2xl font-bold text-slate-900 mb-2">{plan.name}</h3>
+              <p class="text-slate-500 mb-6">Diện tích thông thủy: <span class="font-semibold text-slate-900">{plan.area}</span></p>
+
+              <div class="mt-auto pt-6 border-t border-slate-200 flex justify-between items-center">
+                <div>
+                  <div class="text-xs text-slate-500 uppercase tracking-wider font-semibold mb-1">Giá Dự Kiến Từ</div>
+                  <div class="text-2xl font-extrabold text-yellow-600">{plan.price}</div>
+                </div>
+                <a href="#booking" class="w-12 h-12 rounded-full bg-slate-900 text-white flex items-center justify-center group-hover:bg-yellow-500 transition-colors" aria-label="Đăng ký nhận báo giá">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                </a>
+              </div>
+            </div>
           </div>
         ))}
       </div>
@@ -119,15 +171,48 @@ import ContactForm from "../../components/ContactForm.astro";
   </section>
 
   <!-- ===== BOOKING FORM ===== -->
-  <section class="section-padding bg-white" id="booking">
-    <div class="max-w-4xl mx-auto">
-      <div class="water-card p-10 shadow-2xl border-ocean-300 bg-gradient-to-br from-white via-ocean-50/40 to-white">
-        <div class="text-center mb-8">
-          <h2 class="text-3xl font-extrabold text-ocean-950 mb-2">Nhận Bảng Giá Chi Tiết & Ưu Đãi 8%</h2>
-          <p class="text-slate-500 text-sm">Chỉ áp dụng cho 50 suất đăng ký tư vấn trực tiếp hôm nay.</p>
+  <section class="py-24 bg-slate-900 text-white relative overflow-hidden" id="booking">
+    <!-- Abstract Background Pattern -->
+    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 32px 32px;"></div>
+
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="bg-slate-800/50 backdrop-blur-xl border border-slate-700 p-8 sm:p-12 rounded-3xl shadow-2xl">
+        <div class="text-center mb-10 max-w-2xl mx-auto">
+          <h2 class="text-3xl sm:text-4xl font-extrabold mb-4">Trở Thành Cư Dân Ưu Tú Ngay Hôm Nay</h2>
+          <p class="text-slate-400">Đăng ký để nhận bảng giá chi tiết, mặt bằng 3D và thư mời tham quan căn hộ mẫu tư nhân dành riêng cho bạn.</p>
         </div>
-        <ContactForm formId="bds-booking-form" />
+
+        <div class="dark-form-wrapper max-w-2xl mx-auto">
+          <ContactForm formId="bds-booking-form" />
+        </div>
+        <p class="text-center text-slate-500 text-xs mt-6">Thông tin của bạn được bảo mật tuyệt đối 100%. Tư vấn viên sẽ liên hệ trong vòng 5 phút.</p>
       </div>
     </div>
   </section>
+
+  <style>
+    /* Styling to make ContactForm component blend with dark theme */
+    .dark-form-wrapper :global(input),
+    .dark-form-wrapper :global(textarea) {
+      background-color: rgba(255, 255, 255, 0.05);
+      border-color: rgba(255, 255, 255, 0.1);
+      color: white;
+    }
+    .dark-form-wrapper :global(input::placeholder),
+    .dark-form-wrapper :global(textarea::placeholder) {
+      color: rgba(255, 255, 255, 0.4);
+    }
+    .dark-form-wrapper :global(label) {
+      color: rgba(255, 255, 255, 0.8);
+    }
+    .dark-form-wrapper :global(button) {
+      background: linear-gradient(to right, #eab308, #d97706);
+      border: none;
+      color: #020617;
+      font-weight: bold;
+    }
+    .dark-form-wrapper :global(button:hover) {
+      background: linear-gradient(to right, #facc15, #b45309);
+    }
+  </style>
 </BaseLayout>

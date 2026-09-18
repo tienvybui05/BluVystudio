@@ -9,44 +9,103 @@ import ContactForm from "../../components/ContactForm.astro";
 >
   <!-- ===== DEMO PROJECT NAV HEADER ===== -->
   <div class="bg-teal-950 text-white py-2 px-4 text-xs flex justify-between items-center border-b border-teal-800">
-    <div class="flex items-center gap-2">
-      <span class="px-2 py-0.5 rounded bg-teal-500 text-white font-bold">DEMO LIVE</span>
-      <span class="text-teal-200">Mẫu Landing Page Nha Khoa Quốc Tế — Thiết kế bởi BluVy</span>
+    <div class="flex items-center gap-3">
+      <span class="px-2.5 py-0.5 rounded-full bg-emerald-500 text-white font-bold tracking-wide">DEMO LIVE</span>
+      <span class="text-teal-100 hidden sm:inline font-medium">Mẫu Landing Page Nha Khoa Quốc Tế — Thiết kế bởi BluVy</span>
+      <span class="text-teal-100 sm:hidden">Landing Page Nha Khoa</span>
     </div>
-    <a href="/#du-an" class="text-teal-300 hover:text-white font-semibold underline flex items-center gap-1">
-      ← Quay về BluVy
+    <a href="/#du-an" class="text-teal-300 hover:text-white font-semibold flex items-center gap-1.5 transition-colors">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+      Quay về BluVy
     </a>
   </div>
 
   <!-- ===== HERO ===== -->
-  <section class="section-padding relative overflow-hidden bg-gradient-to-br from-teal-900 via-cyan-900 to-teal-950 text-white" id="medcare-hero">
-    <div class="max-w-7xl mx-auto relative z-10">
-      <div class="grid lg:grid-cols-12 gap-12 items-center">
-        <div class="lg:col-span-7">
-          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-teal-200 text-xs font-bold mb-6">
-            🏥 THẨM MỸ NHA KHOA TIÊU CHUẨN CHÂU ÂU
+  <section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-slate-50 pt-10 pb-20" id="medcare-hero">
+    <!-- Clean Medical Background -->
+    <div class="absolute inset-0 z-0">
+      <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="MedCare Dental Clinic" class="w-full h-full object-cover" />
+      <!-- Soft gradient to make text readable but keep the bright, clinical feel -->
+      <div class="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-white/40"></div>
+
+      <!-- Subtle Teal Glows -->
+      <div class="absolute -top-[20%] -left-[10%] w-[50%] h-[50%] bg-teal-200/40 rounded-full blur-[100px] pointer-events-none" aria-hidden="true"></div>
+      <div class="absolute bottom-[0%] right-[30%] w-[30%] h-[30%] bg-cyan-200/30 rounded-full blur-[80px] pointer-events-none" aria-hidden="true"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <!-- Hero Content -->
+        <div class="lg:col-span-7 animate-[fadeInUp_1s_ease-out_forwards]">
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-teal-50 border border-teal-100 text-teal-700 text-xs font-bold tracking-[0.1em] uppercase mb-6 shadow-sm">
+            <svg class="w-4 h-4 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            THẨM MỸ NHA KHOA TIÊU CHUẨN CHÂU ÂU
           </div>
-          <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight text-white">
-            MedCare Dental <br />
-            <span class="bg-gradient-to-r from-teal-300 via-cyan-200 to-white bg-clip-text text-transparent">Nụ Cười Rạng Rỡ Tự Tin</span>
+          <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-[1.1] text-slate-900 tracking-tight">
+            Kiến Tạo Nụ Cười <br />
+            <span class="bg-gradient-to-r from-teal-600 via-cyan-500 to-teal-500 bg-clip-text text-transparent">Hoàn Mỹ Tự Tin</span>
           </h1>
-          <p class="text-lg md:text-xl text-teal-100/90 leading-relaxed mb-8 max-w-2xl">
-            Công nghệ chỉnh nha 3D iTero Element 5D xem trước kết quả chỉ sau 60s. Hỗ trợ trả góp 0% lãi suất — Miễn phí tư vấn & chụp X-quang 3D.
+          <p class="text-lg sm:text-xl text-slate-600 leading-relaxed mb-10 max-w-2xl font-light">
+            Trải nghiệm công nghệ chỉnh nha 3D iTero Element 5D xem trước kết quả chỉ sau 60s. Hỗ trợ trả góp 0% lãi suất — Miễn phí tư vấn & chụp X-quang 3D.
           </p>
-          <div class="flex flex-wrap gap-4 mb-8">
-            <a href="#booking" class="btn-primary !bg-teal-500 hover:!bg-teal-600">
-              📅 Đặt Lịch Khám & Chụp X-Quang 0đ
+          <div class="flex flex-col sm:flex-row gap-4 mb-12">
+            <a href="#booking" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-teal-600 text-white font-bold rounded-xl hover:bg-teal-700 hover:scale-105 hover:shadow-[0_10px_40px_-10px_rgba(13,148,136,0.5)] transition-all duration-300">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+              Đặt Lịch Nhận Ưu Đãi 30%
             </a>
-            <a href="tel:0911223344" class="btn-secondary !bg-white/10 !text-white !border-white/30 hover:!bg-white/20">
-              📞 Hotline Bác Sĩ: 0911.22.33.44
+            <a href="tel:0911223344" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white border-2 border-teal-100 text-teal-700 font-bold rounded-xl hover:bg-teal-50 transition-all duration-300 shadow-sm hover:shadow-md">
+              Hotline Bác Sĩ: 0911.22.33.44
             </a>
+          </div>
+
+          <!-- Trust Indicators -->
+          <div class="flex flex-wrap items-center gap-6 pt-6 border-t border-slate-200">
+            <div class="flex items-center gap-2">
+              <div class="w-10 h-10 rounded-full bg-teal-50 flex items-center justify-center text-teal-600">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+              </div>
+              <div class="text-sm">
+                <div class="font-bold text-slate-900">Bảo Hành</div>
+                <div class="text-slate-500">Trọn đời</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-2">
+              <div class="w-10 h-10 rounded-full bg-teal-50 flex items-center justify-center text-teal-600">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+              </div>
+              <div class="text-sm">
+                <div class="font-bold text-slate-900">10,000+</div>
+                <div class="text-slate-500">Khách hàng</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-2">
+              <div class="flex -space-x-2">
+                <img class="w-10 h-10 rounded-full border-2 border-white" src="https://images.unsplash.com/photo-1594824436951-7f12678cecea?ixlib=rb-4.0.3&auto=format&fit=facearea&facepad=2&w=100&h=100&q=80" alt="Reviewer" />
+                <img class="w-10 h-10 rounded-full border-2 border-white" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=facearea&facepad=2&w=100&h=100&q=80" alt="Reviewer" />
+                <div class="w-10 h-10 rounded-full border-2 border-white bg-teal-100 flex items-center justify-center text-xs font-bold text-teal-700">5.0⭐</div>
+              </div>
+              <div class="text-sm font-medium text-slate-600 ml-1">Đánh giá tốt</div>
+            </div>
           </div>
         </div>
-        <div class="lg:col-span-5">
-          <div class="water-card p-8 bg-white text-slate-800 shadow-2xl rounded-3xl">
-            <h3 class="text-2xl font-extrabold text-teal-950 mb-2 text-center">Đặt Lịch Khám Ưu Tiên</h3>
-            <p class="text-slate-500 text-xs text-center mb-6">Bác sĩ Thạc sĩ trực tiếp thăm khám</p>
-            <ContactForm formId="medcare-booking-form" />
+
+        <!-- Hero Form Card -->
+        <div class="lg:col-span-5 w-full max-w-md mx-auto lg:ml-auto animate-[fadeInUp_1s_ease-out_0.3s_forwards] opacity-0 relative">
+          <!-- Decorative element -->
+          <div class="absolute -right-6 -bottom-6 w-32 h-32 bg-[radial-gradient(#14b8a6_2px,transparent_2px)] [background-size:16px_16px] opacity-20 z-0"></div>
+
+          <div class="bg-white p-8 rounded-[2rem] shadow-[0_30px_60px_-15px_rgba(13,148,136,0.15)] border border-teal-50 relative z-10">
+            <div class="text-center mb-6">
+              <div class="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-teal-50 text-teal-600 mb-4">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+              </div>
+              <h3 class="text-2xl font-bold text-slate-900 mb-2">Đặt Lịch Khám 0đ</h3>
+              <p class="text-slate-500 text-sm font-medium">Bác sĩ chuyên khoa II trực tiếp thăm khám</p>
+            </div>
+
+            <div class="light-form-wrapper">
+              <ContactForm formId="medcare-hero-form" />
+            </div>
           </div>
         </div>
       </div>
@@ -54,25 +113,45 @@ import ContactForm from "../../components/ContactForm.astro";
   </section>
 
   <!-- ===== SERVICES ===== -->
-  <section class="section-padding bg-white" id="dich-vu">
-    <div class="max-w-7xl mx-auto">
-      <div class="text-center mb-16">
-        <span class="text-teal-600 text-xs font-bold uppercase tracking-[0.2em]">DỊCH VỤ NỔI BẬT</span>
-        <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mt-2 mb-4">Giải Pháp Nụ Cười <span class="text-teal-600">Toàn Diện</span></h2>
+  <section class="py-24 bg-slate-50 relative" id="dich-vu">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="text-center mb-16 max-w-3xl mx-auto">
+        <span class="text-teal-600 text-sm font-bold uppercase tracking-[0.2em] mb-3 block">Dịch Vụ Mũi Nhọn</span>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight">Kiến Tạo Nụ Cười <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-cyan-500">Toàn Diện</span></h2>
+        <p class="text-lg text-slate-600 leading-relaxed">Áp dụng các công nghệ nha khoa tiên tiến nhất thế giới, hạn chế xâm lấn, không đau, thẩm mỹ vượt trội.</p>
       </div>
 
       <div class="grid md:grid-cols-3 gap-8">
         {[
-          { name: "Niềng Răng Invisalign", desc: "Khay niềng trong suốt siêu thẩm mỹ nhập khẩu Mỹ", price: "Từ 25 Triệu", icon: "✨" },
-          { name: "Bọc Răng Sứ Nano 3D", desc: "Răng sứ Cercon / Lava chính hãng bảo hành trọn đời", price: "Từ 1.8 Triệu / Răng", icon: "💎" },
-          { name: "Trồng Răng Implant Straumann", desc: "Phục hồi răng đã mất ăn nhai chắc chắn như răng thật", price: "Từ 12 Triệu", icon: "🦷" },
+          { name: "Niềng Răng Invisalign", desc: "Khay niềng trong suốt siêu thẩm mỹ nhập khẩu trực tiếp từ Mỹ. Biết trước kết quả sau 60s.", price: "Từ 25 Triệu", icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>`, img: "https://images.unsplash.com/photo-1606214174585-fd31238f4ceb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
+          { name: "Bọc Răng Sứ Nano 3D", desc: "Răng sứ Cercon / Lava chính hãng bảo hành trọn đời. Form răng thiết kế độc bản theo tỉ lệ khuôn mặt.", price: "Từ 1.8 Triệu / Răng", icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>`, img: "https://images.unsplash.com/photo-1599839619722-39751411ea63?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
+          { name: "Trồng Răng Implant", desc: "Phục hồi răng đã mất ăn nhai chắc chắn như răng thật 100%. Sử dụng trụ Implant Straumann Thụy Sĩ.", price: "Từ 12 Triệu / Trụ", icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>`, img: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
         ].map((s) => (
-          <div class="water-card p-8 text-center border-teal-100 hover:border-teal-300">
-            <div class="text-4xl mb-4">{s.icon}</div>
-            <h3 class="text-xl font-bold text-slate-900 mb-2">{s.name}</h3>
-            <p class="text-slate-500 text-sm mb-4">{s.desc}</p>
-            <div class="text-2xl font-extrabold text-teal-600 mb-6">{s.price}</div>
-            <a href="#booking" class="btn-secondary w-full justify-center !border-teal-200 !text-teal-700 hover:!bg-teal-50">Đặt Lịch Nhận Voucher 2 Triệu</a>
+          <div class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-[0_20px_40px_-15px_rgba(13,148,136,0.15)] transition-all duration-300 border border-slate-100 flex flex-col">
+            <div class="h-48 overflow-hidden relative">
+              <div class="absolute inset-0 bg-teal-900/10 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+              <img src={s.img} alt={s.name} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <div class="absolute bottom-4 left-4 z-20">
+                <div class="w-12 h-12 rounded-xl bg-white text-teal-600 flex items-center justify-center shadow-lg">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <Fragment set:html={s.icon} />
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-8 flex flex-col flex-grow">
+              <h3 class="text-2xl font-bold text-slate-900 mb-3">{s.name}</h3>
+              <p class="text-slate-600 text-sm leading-relaxed mb-6">{s.desc}</p>
+
+              <div class="mt-auto pt-6 border-t border-slate-100">
+                <div class="text-xs text-slate-500 font-semibold uppercase tracking-wider mb-1">Giá Ưu Đãi Chỉ Từ</div>
+                <div class="text-2xl font-extrabold text-teal-600 mb-6">{s.price}</div>
+                <a href="#booking" class="w-full flex items-center justify-center gap-2 px-6 py-3 bg-teal-50 text-teal-700 font-bold rounded-xl hover:bg-teal-600 hover:text-white transition-colors duration-300">
+                  Tư Vấn & Nhận Khuyến Mãi
+                </a>
+              </div>
+            </div>
           </div>
         ))}
       </div>
@@ -80,15 +159,103 @@ import ContactForm from "../../components/ContactForm.astro";
   </section>
 
   <!-- ===== BOOKING SECTION ===== -->
-  <section class="section-padding bg-teal-50/50" id="booking">
-    <div class="max-w-3xl mx-auto">
-      <div class="water-card p-10 bg-white border-teal-200 shadow-2xl">
-        <div class="text-center mb-8">
-          <h2 class="text-3xl font-extrabold text-slate-900 mb-2">Đăng Ký Tư Vấn & Chụp X-Quang Miễn Phí</h2>
-          <p class="text-slate-500 text-sm">Hỗ trợ đặt lịch khám không chờ đợi — Bảo mật thông tin 100%.</p>
+  <section class="py-24 bg-teal-900 relative overflow-hidden" id="booking">
+    <!-- Abstract Pattern -->
+    <div class="absolute inset-0 opacity-10">
+      <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="medical-cross" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M18 10h4v8h8v4h-8v8h-4v-8h-8v-4h8v-8z" fill="currentColor"/>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#medical-cross)"/>
+      </svg>
+    </div>
+
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="bg-teal-800/60 backdrop-blur-xl border border-teal-700/50 p-8 sm:p-12 rounded-[2.5rem] shadow-2xl relative overflow-hidden text-center">
+        <div class="text-center mb-10 max-w-2xl mx-auto">
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4 tracking-tight">Khám Chuyên Khoa Cùng Bác Sĩ CKI</h2>
+          <p class="text-teal-200">Đặt lịch ngay hôm nay để được miễn phí thăm khám tổng quát và chụp phim CT Conebeam 3D (Trị giá 1.500.000đ).</p>
         </div>
-        <ContactForm formId="medcare-form-footer" />
+
+        <div class="relative z-10 max-w-xl mx-auto text-left">
+          <div class="dark-form-wrapper">
+             <ContactForm formId="medcare-form-footer" />
+          </div>
+        </div>
+        <p class="text-teal-400 text-sm mt-6">Chúng tôi cam kết bảo mật 100% thông tin khách hàng.</p>
       </div>
     </div>
   </section>
+
+  <style>
+    /* Light Theme Form Styling for Hero */
+    .light-form-wrapper :global(input),
+    .light-form-wrapper :global(textarea) {
+      background-color: #f8fafc;
+      border-color: #e2e8f0;
+      color: #0f172a;
+      border-radius: 0.75rem;
+    }
+    .light-form-wrapper :global(input:focus),
+    .light-form-wrapper :global(textarea:focus) {
+      border-color: #0d9488;
+      box-shadow: 0 0 0 4px rgba(13, 148, 136, 0.1);
+    }
+    .light-form-wrapper :global(label) {
+      color: #334155;
+      font-weight: 600;
+    }
+    .light-form-wrapper :global(button) {
+      background-color: #0d9488;
+      border: none;
+      color: white;
+      font-weight: bold;
+      border-radius: 0.75rem;
+      padding-top: 0.875rem;
+      padding-bottom: 0.875rem;
+      margin-top: 0.5rem;
+    }
+    .light-form-wrapper :global(button:hover) {
+      background-color: #0f766e;
+    }
+
+    /* Dark Theme Form Styling for Footer */
+    .dark-form-wrapper :global(input),
+    .dark-form-wrapper :global(textarea) {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.2);
+      color: white;
+      border-radius: 0.75rem;
+    }
+    .dark-form-wrapper :global(input::placeholder),
+    .dark-form-wrapper :global(textarea::placeholder) {
+      color: rgba(255, 255, 255, 0.5);
+    }
+    .dark-form-wrapper :global(input:focus),
+    .dark-form-wrapper :global(textarea:focus) {
+      border-color: #5eead4;
+      background-color: rgba(255, 255, 255, 0.15);
+    }
+    .dark-form-wrapper :global(label) {
+      color: rgba(255, 255, 255, 0.9);
+      font-weight: 500;
+    }
+    .dark-form-wrapper :global(button) {
+      background-color: white;
+      border: none;
+      color: #0f766e;
+      font-weight: bold;
+      border-radius: 0.75rem;
+      padding-top: 0.875rem;
+      padding-bottom: 0.875rem;
+      margin-top: 0.5rem;
+      transition: all 0.3s;
+    }
+    .dark-form-wrapper :global(button:hover) {
+      background-color: #f0fdfa;
+      transform: scale(1.02);
+    }
+  </style>
 </BaseLayout>

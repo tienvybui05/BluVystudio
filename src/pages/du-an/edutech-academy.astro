@@ -8,45 +8,80 @@ import ContactForm from "../../components/ContactForm.astro";
   description="Khóa học lập trình Fullstack & AI 6 tháng thực chiến. Mentor 1-on-1 từ Tech Leads Google, cam kết giới thiệu việc làm sau khóa học."
 >
   <!-- ===== DEMO PROJECT NAV HEADER ===== -->
-  <div class="bg-indigo-950 text-white py-2 px-4 text-xs flex justify-between items-center border-b border-indigo-800">
-    <div class="flex items-center gap-2">
-      <span class="px-2 py-0.5 rounded bg-indigo-500 text-white font-bold">DEMO LIVE</span>
-      <span class="text-indigo-200">Mẫu Landing Page Khóa Học Online EdTech — Thiết kế bởi BluVy</span>
+  <div class="bg-indigo-950 text-white py-2 px-4 text-xs flex justify-between items-center border-b border-indigo-900/50">
+    <div class="flex items-center gap-3">
+      <span class="px-2.5 py-0.5 rounded-full bg-emerald-500 text-white font-bold tracking-wide">DEMO LIVE</span>
+      <span class="text-indigo-200 hidden sm:inline font-medium">Mẫu Landing Page Khóa Học Online EdTech — Thiết kế bởi BluVy</span>
+      <span class="text-indigo-200 sm:hidden">Landing Page EdTech</span>
     </div>
-    <a href="/#du-an" class="text-indigo-300 hover:text-white font-semibold underline flex items-center gap-1">
-      ← Quay về BluVy
+    <a href="/#du-an" class="text-indigo-300 hover:text-white font-semibold flex items-center gap-1.5 transition-colors">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+      Quay về BluVy
     </a>
   </div>
 
   <!-- ===== HERO ===== -->
-  <section class="section-padding relative overflow-hidden bg-gradient-to-br from-indigo-950 via-purple-950 to-indigo-900 text-white" id="edutech-hero">
-    <div class="max-w-7xl mx-auto relative z-10">
-      <div class="grid lg:grid-cols-12 gap-12 items-center">
-        <div class="lg:col-span-7">
-          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-indigo-200 text-xs font-bold mb-6">
-            🎓 KHÓA HỌC LẬP TRÌNH FULLSTACK & AI THỰC CHUYÊN
+  <section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-slate-950 text-white pt-10 pb-20" id="edutech-hero">
+    <!-- Modern Tech Background -->
+    <div class="absolute inset-0 z-0">
+      <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Tech Academy Student Workspace" class="w-full h-full object-cover opacity-20 mix-blend-overlay" />
+      <div class="absolute inset-0 bg-gradient-to-br from-indigo-950 via-slate-900 to-indigo-950 opacity-90"></div>
+
+      <!-- Abstract Glows -->
+      <div class="absolute -top-[30%] -left-[10%] w-[50%] h-[50%] bg-indigo-600/30 rounded-full blur-[120px] mix-blend-screen pointer-events-none" aria-hidden="true"></div>
+      <div class="absolute top-[20%] right-[0%] w-[40%] h-[40%] bg-purple-600/20 rounded-full blur-[100px] mix-blend-screen pointer-events-none" aria-hidden="true"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <!-- Hero Content -->
+        <div class="lg:col-span-7 animate-[fadeInUp_1s_ease-out_forwards]">
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 backdrop-blur-md border border-white/10 text-indigo-300 text-xs font-bold tracking-[0.1em] uppercase mb-6">
+            <svg class="w-4 h-4 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            KHÓA HỌC LẬP TRÌNH FULLSTACK & AI THỰC CHIẾN
           </div>
-          <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight text-white">
+          <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-[1.1] text-white tracking-tight">
             EduTech Academy <br />
-            <span class="bg-gradient-to-r from-indigo-300 via-purple-300 to-pink-300 bg-clip-text text-transparent">Trở Thành Fullstack Developer</span>
+            <span class="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Từ Zero Đến Hero</span>
           </h1>
-          <p class="text-lg md:text-xl text-indigo-100/90 leading-relaxed mb-8 max-w-2xl">
-            Đào tạo từ Zero đến Hero trong 6 tháng. Thực chiến trên 5 dự án thực tế với sự hướng dẫn 1-on-1 từ Tech Leads Google & Shopee.
+          <p class="text-lg sm:text-xl text-slate-300 leading-relaxed mb-10 max-w-2xl font-light">
+            Đào tạo lập trình viên toàn diện trong 6 tháng. Thực chiến trên 5 dự án thực tế với sự hướng dẫn 1-on-1 từ Tech Leads Google, Shopee. Cam kết 100% giới thiệu việc làm.
           </p>
-          <div class="flex flex-wrap gap-4 mb-8">
-            <a href="#register" class="btn-primary !bg-indigo-500 hover:!bg-indigo-600">
-              🚀 Đăng Ký Học Thử Miễn Phí 7 Ngày
+          <div class="flex flex-col sm:flex-row gap-4 mb-12">
+            <a href="#register" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-indigo-600 text-white font-bold rounded-xl hover:bg-indigo-500 hover:scale-105 hover:shadow-[0_10px_40px_-10px_rgba(79,70,229,0.5)] transition-all duration-300">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+              Đăng Ký Học Thử 7 Ngày
             </a>
-            <a href="#curriculum" class="btn-secondary !bg-white/10 !text-white !border-white/30 hover:!bg-white/20">
-              📖 Tải Lộ Trình Đào Tạo PDF
+            <a href="#curriculum" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/5 backdrop-blur-md border border-white/10 text-white font-bold rounded-xl hover:bg-white/10 transition-all duration-300">
+              Tải Lộ Trình Đào Tạo PDF
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
             </a>
+          </div>
+
+          <!-- Social Proof Logos -->
+          <div class="pt-8 border-t border-white/10">
+            <p class="text-xs text-slate-400 uppercase tracking-widest font-semibold mb-4">Học viên của chúng tôi đang làm việc tại</p>
+            <div class="flex items-center gap-8 opacity-60 grayscale">
+              <div class="text-xl font-bold font-serif italic">Google</div>
+              <div class="text-xl font-bold tracking-tighter">Shopee</div>
+              <div class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">VNG</div>
+              <div class="text-xl font-extrabold tracking-wide">FPT</div>
+            </div>
           </div>
         </div>
-        <div class="lg:col-span-5">
-          <div class="water-card p-8 bg-white text-slate-800 shadow-2xl rounded-3xl">
-            <h3 class="text-2xl font-extrabold text-indigo-950 mb-2 text-center">Đăng Ký Nhận Học Bổng 30%</h3>
-            <p class="text-slate-500 text-xs text-center mb-6">Chỉ còn 15 suất ưu đãi cho khóa học tháng này</p>
-            <ContactForm formId="edutech-hero-form" />
+
+        <!-- Hero Form Card -->
+        <div class="lg:col-span-5 w-full max-w-md mx-auto lg:ml-auto animate-[fadeInUp_1s_ease-out_0.3s_forwards] opacity-0">
+          <div class="bg-slate-900/60 backdrop-blur-2xl border border-white/10 p-8 rounded-3xl shadow-[0_30px_60px_-15px_rgba(0,0,0,0.8)] relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-indigo-500/20 rounded-full blur-2xl pointer-events-none" aria-hidden="true"></div>
+            <div class="text-center mb-6 relative z-10">
+              <h3 class="text-2xl font-bold text-white mb-2">Nhận Học Bổng 30%</h3>
+              <p class="text-indigo-300 text-sm font-medium">Chỉ còn 15 suất ưu đãi cho khóa học tháng này</p>
+            </div>
+
+            <div class="dark-form-wrapper relative z-10">
+              <ContactForm formId="edutech-hero-form" />
+            </div>
           </div>
         </div>
       </div>
@@ -54,28 +89,50 @@ import ContactForm from "../../components/ContactForm.astro";
   </section>
 
   <!-- ===== COURSES ===== -->
-  <section class="section-padding bg-white" id="curriculum">
-    <div class="max-w-7xl mx-auto">
-      <div class="text-center mb-16">
-        <span class="text-indigo-600 text-xs font-bold uppercase tracking-[0.2em]">LỘ TRÌNH THỰC CHUYÊN</span>
-        <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mt-2 mb-4">Khóa Học Hot Nhất <span class="text-indigo-600">2026</span></h2>
+  <section class="py-24 bg-white relative" id="curriculum">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="text-center mb-16 max-w-3xl mx-auto">
+        <span class="text-indigo-600 text-sm font-bold uppercase tracking-[0.2em] mb-3 block">Lộ Trình Thực Chiến</span>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight">Khóa Học Đỉnh Cao Công Nghệ</h2>
+        <p class="text-lg text-slate-600 leading-relaxed">Giáo trình liên tục cập nhật theo xu hướng tuyển dụng mới nhất của các tập đoàn công nghệ hàng đầu.</p>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-8">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {[
-          { name: "Fullstack Web Developer", desc: "React, Next.js, Node.js, TailwindCSS & PostgreSQL", duration: "6 Tháng (Online / Offline)", salary: "15M - 25M / Tháng", icon: "💻" },
-          { name: "AI & Machine Learning Specialist", desc: "Python, PyTorch, LLM Agent Building, OpenAI API & RAG", duration: "5 Tháng (Chuyên Sâu)", salary: "20M - 35M / Tháng", icon: "🤖" },
-          { name: "Mobile App React Native", desc: "Lập trình ứng dụng iOS & Android đa nền tảng", duration: "4 Tháng (Thực Hành)", salary: "15M - 28M / Tháng", icon: "📱" },
+          { name: "Fullstack Web Developer", desc: "Làm chủ React, Next.js, Node.js, TailwindCSS & PostgreSQL xây dựng hệ thống scale lớn.", duration: "6 Tháng (Online / Offline)", salary: "15M - 25M / Tháng", icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />`, highlight: "Đăng Ký Nhiều Nhất" },
+          { name: "AI & Machine Learning Specialist", desc: "Thành thạo Python, PyTorch, LLM Agent Building, OpenAI API & hệ thống RAG.", duration: "5 Tháng (Chuyên Sâu)", salary: "20M - 40M / Tháng", icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />`, highlight: "Xu Hướng 2026" },
+          { name: "Mobile App React Native", desc: "Phát triển ứng dụng di động iOS & Android đa nền tảng tối ưu hiệu suất với React Native.", duration: "4 Tháng (Thực Hành)", salary: "15M - 28M / Tháng", icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />`, highlight: "Dễ Tìm Việc" },
         ].map((c) => (
-          <div class="water-card p-8 text-center border-indigo-100 hover:border-indigo-300 flex flex-col justify-between">
-            <div>
-              <div class="text-5xl mb-4">{c.icon}</div>
-              <h3 class="text-xl font-bold text-slate-900 mb-2">{c.name}</h3>
-              <p class="text-slate-500 text-sm mb-4 leading-relaxed">{c.desc}</p>
-              <div class="text-xs text-slate-400 mb-2">Thời gian: <strong>{c.duration}</strong></div>
-              <div class="text-lg font-extrabold text-indigo-600 mb-6">Mức lương: {c.salary}</div>
+          <div class="group relative bg-slate-50 border border-slate-200 rounded-3xl p-8 hover:bg-white hover:border-indigo-200 hover:shadow-[0_20px_40px_-15px_rgba(79,70,229,0.15)] transition-all duration-300 flex flex-col justify-between">
+            <div class="absolute -top-4 right-8 px-4 py-1.5 rounded-full bg-indigo-100 text-indigo-700 text-xs font-bold tracking-wide shadow-sm">
+              {c.highlight}
             </div>
-            <a href="#register" class="btn-primary w-full justify-center !bg-indigo-500 hover:!bg-indigo-600">Đăng Ký Tư Vấn Khóa Học</a>
+
+            <div>
+              <div class="w-16 h-16 rounded-2xl bg-indigo-50/80 text-indigo-600 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-indigo-600 group-hover:text-white transition-all duration-500">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <Fragment set:html={c.icon} />
+                </svg>
+              </div>
+              <h3 class="text-2xl font-bold text-slate-900 mb-3 leading-snug">{c.name}</h3>
+              <p class="text-slate-600 text-base mb-6 leading-relaxed">{c.desc}</p>
+
+              <div class="space-y-3 mb-8">
+                <div class="flex items-center text-sm text-slate-600 bg-white px-4 py-2.5 rounded-lg border border-slate-100">
+                  <svg class="w-5 h-5 text-indigo-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                  {c.duration}
+                </div>
+                <div class="flex items-center text-sm text-slate-600 bg-white px-4 py-2.5 rounded-lg border border-slate-100">
+                  <svg class="w-5 h-5 text-emerald-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                  Lương: <strong class="ml-1 text-slate-900">{c.salary}</strong>
+                </div>
+              </div>
+            </div>
+
+            <a href="#register" class="w-full flex items-center justify-center gap-2 px-6 py-4 bg-slate-900 text-white font-semibold rounded-xl hover:bg-indigo-600 transition-colors duration-300">
+              Đăng Ký Tư Vấn
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </a>
           </div>
         ))}
       </div>
@@ -83,15 +140,90 @@ import ContactForm from "../../components/ContactForm.astro";
   </section>
 
   <!-- ===== FORM ===== -->
-  <section class="section-padding bg-indigo-50/50" id="register">
-    <div class="max-w-3xl mx-auto">
-      <div class="water-card p-10 bg-white border-indigo-200 shadow-2xl">
-        <div class="text-center mb-8">
-          <h2 class="text-3xl font-extrabold text-slate-900 mb-2">Đăng Ký Học Thử Miễn Phí 7 Ngày</h2>
-          <p class="text-slate-500 text-sm">Nhận ngay tài liệu lộ trình lập trình + Voucher học bổng 3.000.000đ.</p>
+  <section class="py-24 bg-slate-50 relative overflow-hidden" id="register">
+    <!-- Geometric Background elements -->
+    <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-indigo-50 border border-indigo-100 pointer-events-none"></div>
+    <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-purple-50 border border-purple-100 pointer-events-none"></div>
+
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="bg-white border border-slate-200 p-8 sm:p-12 rounded-[2.5rem] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.05)] relative overflow-hidden">
+        <div class="absolute -top-24 -right-24 w-48 h-48 bg-indigo-50 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+        <div class="text-center mb-10 relative z-10">
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">Bắt Đầu Sự Nghiệp IT Của Bạn</h2>
+          <p class="text-slate-600">Đăng ký học thử miễn phí 7 ngày. Nhận ngay bộ tài liệu lộ trình lập trình + Voucher học bổng trị giá 3.000.000đ.</p>
         </div>
-        <ContactForm formId="edutech-form-footer" />
+
+        <div class="relative z-10 max-w-xl mx-auto">
+          <!-- Injecting light theme specific styling -->
+          <div class="light-form-wrapper">
+             <ContactForm formId="edutech-form-footer" />
+          </div>
+        </div>
+        <div class="text-center mt-8">
+          <p class="text-sm text-slate-500">Đã có hơn <span class="font-bold text-indigo-600">2,500+</span> học viên tốt nghiệp và có việc làm.</p>
+        </div>
       </div>
     </div>
   </section>
+
+  <style>
+    /* Dark Theme Form Styling for Hero */
+    .dark-form-wrapper :global(input),
+    .dark-form-wrapper :global(textarea) {
+      background-color: rgba(255, 255, 255, 0.05);
+      border-color: rgba(255, 255, 255, 0.1);
+      color: white;
+      border-radius: 0.75rem;
+    }
+    .dark-form-wrapper :global(input::placeholder),
+    .dark-form-wrapper :global(textarea::placeholder) {
+      color: rgba(255, 255, 255, 0.4);
+    }
+    .dark-form-wrapper :global(label) {
+      color: rgba(255, 255, 255, 0.8);
+    }
+    .dark-form-wrapper :global(button) {
+      background-color: #4f46e5;
+      border: none;
+      color: white;
+      font-weight: bold;
+      border-radius: 0.75rem;
+      padding-top: 0.875rem;
+      padding-bottom: 0.875rem;
+    }
+    .dark-form-wrapper :global(button:hover) {
+      background-color: #4338ca;
+    }
+
+    /* Light Theme Form Styling for Footer */
+    .light-form-wrapper :global(input),
+    .light-form-wrapper :global(textarea) {
+      background-color: #f8fafc;
+      border-color: #e2e8f0;
+      color: #0f172a;
+      border-radius: 0.75rem;
+    }
+    .light-form-wrapper :global(input:focus),
+    .light-form-wrapper :global(textarea:focus) {
+      border-color: #6366f1;
+      box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+    }
+    .light-form-wrapper :global(label) {
+      color: #334155;
+      font-weight: 600;
+    }
+    .light-form-wrapper :global(button) {
+      background-color: #0f172a;
+      border: none;
+      color: white;
+      font-weight: bold;
+      border-radius: 0.75rem;
+      padding-top: 0.875rem;
+      padding-bottom: 0.875rem;
+      margin-top: 0.5rem;
+    }
+    .light-form-wrapper :global(button:hover) {
+      background-color: #4f46e5;
+    }
+  </style>
 </BaseLayout>

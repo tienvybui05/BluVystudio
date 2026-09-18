@@ -61,7 +61,7 @@ const services = ["Thiết kế Landing Page", "Website Doanh Nghiệp", "Tối 
       } else { 
         throw new Error(data.message || "Lỗi không xác định"); 
       }
-    } catch (err: any) { 
+    } catch (err) { 
       showStatus("error", err.message || "Có lỗi xảy ra. Vui lòng gọi hotline 0362.567.759."); 
     }
     finally { submitBtn.disabled = false; submitBtn.innerHTML = '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg><span>Gửi yêu cầu tư vấn</span>'; }

@@ -377,3 +377,65 @@
 ::-webkit-scrollbar-track { background: #f4fafe; }
 ::-webkit-scrollbar-thumb { background: #bfdbfe; border-radius: 5px; }
 ::-webkit-scrollbar-thumb:hover { background: #7dd3fc; }
+
+/* ===== Tabular numbers — prevent CLS on counter animation ===== */
+.stat-number {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ===== Accessibility: Respect prefers-reduced-motion ===== */
+@media (prefers-reduced-motion: reduce) {
+  /* Pause all CSS animations */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Specifically stop marquee */
+  .animate-marquee {
+    animation: none !important;
+    /* Show a static list instead */
+  }
+
+  /* Stop bubbles */
+  .water-bubbles .bubble {
+    animation: none !important;
+    opacity: 0 !important;
+  }
+
+  /* Stop orbit rings */
+  .orbit-ring {
+    animation: none !important;
+  }
+
+  /* Stop gradient text animation */
+  .gradient-text {
+    animation: none !important;
+    background-position: 0% 50%;
+  }
+
+  /* Stop floating action buttons pulse */
+  .floating-btn::before {
+    animation: none !important;
+  }
+
+  /* Stop liquid orbs */
+  .liquid-orb {
+    animation: none !important;
+  }
+
+  /* Disable hover transforms on cards */
+  .water-card:hover {
+    transform: none;
+  }
+
+  /* Disable button hover transforms */
+  .btn-primary:hover,
+  .btn-secondary:hover {
+    transform: none;
+  }
+}
